@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="ProgramaVECTORDELISTAS.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="46"/>
+        <CursorPos X="26" Y="61"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="9" HistoryIndex="8">
+      <Position1>
+        <Filename Value="ProgramaVECTORDELISTAS.pas"/>
+        <Caret Line="23" TopLine="7"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ProgramaVECTORDELISTAS.pas"/>
+        <Caret Line="91" Column="33" TopLine="67"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ProgramaVECTORDELISTAS.pas"/>
+        <Caret Line="21" Column="6" TopLine="6"/>
+      </Position3>
+      <Position4>
+        <Filename Value="ProgramaVECTORDELISTAS.pas"/>
+        <Caret Line="35" Column="14" TopLine="20"/>
+      </Position4>
+      <Position5>
+        <Filename Value="ProgramaVECTORDELISTAS.pas"/>
+        <Caret Line="56" Column="15" TopLine="46"/>
+      </Position5>
+      <Position6>
+        <Filename Value="ProgramaVECTORDELISTAS.pas"/>
+        <Caret Line="70" Column="31" TopLine="70"/>
+      </Position6>
+      <Position7>
+        <Filename Value="ProgramaVECTORDELISTAS.pas"/>
+        <Caret Line="56" Column="5" TopLine="41"/>
+      </Position7>
+      <Position8>
+        <Filename Value="ProgramaVECTORDELISTAS.pas"/>
+        <Caret Line="86" Column="31" TopLine="69"/>
+      </Position8>
+      <Position9>
+        <Filename Value="ProgramaVECTORDELISTAS.pas"/>
+        <Caret Line="89" Column="31" TopLine="69"/>
+      </Position9>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
