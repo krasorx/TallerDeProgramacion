@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="merge4listas.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="11"/>
+        <CursorPos Y="22"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="5" HistoryIndex="4">
+      <Position1>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="32" Column="44" TopLine="18"/>
+      </Position1>
+      <Position2>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="39" Column="31" TopLine="27"/>
+      </Position2>
+      <Position3>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="123" Column="35" TopLine="98"/>
+      </Position3>
+      <Position4>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="82" Column="16" TopLine="77"/>
+      </Position4>
+      <Position5>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="55" Column="2" TopLine="43"/>
+      </Position5>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
