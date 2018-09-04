@@ -4,18 +4,50 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="1">
+    <Units Count="6">
       <Unit0>
         <Filename Value="merge4listas.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="11"/>
-        <CursorPos Y="22"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="98"/>
+        <CursorPos X="10" Y="112"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit0>
+      <Unit1>
+        <Filename Value="..\..\GamesIsabella\actividad3clase0.pas"/>
+        <UnitName Value="programaLista"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\..\GamesIsabella\actividad2clase0.pas"/>
+        <UnitName Value="NumAleatorio"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\..\GamesIsabella\actividad4clase0.pas"/>
+        <UnitName Value="programaVECTORES"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="8"/>
+        <UsageCount Value="10"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\..\GamesIsabella\actividad5clase0.pas"/>
+        <UnitName Value="VectorDeListas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\..\GamesIsabella\actividad5clase0VECTORDELISTAS.pas"/>
+        <UnitName Value="VectorDeListas"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit5>
     </Units>
-    <JumpHistory Count="5" HistoryIndex="4">
+    <JumpHistory Count="14" HistoryIndex="13">
       <Position1>
         <Filename Value="merge4listas.lpr"/>
         <Caret Line="32" Column="44" TopLine="18"/>
@@ -36,6 +68,42 @@
         <Filename Value="merge4listas.lpr"/>
         <Caret Line="55" Column="2" TopLine="43"/>
       </Position5>
+      <Position6>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="118" Column="14" TopLine="104"/>
+      </Position6>
+      <Position7>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="103" Column="29" TopLine="88"/>
+      </Position7>
+      <Position8>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="95" Column="40" TopLine="88"/>
+      </Position8>
+      <Position9>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="93" Column="14" TopLine="92"/>
+      </Position9>
+      <Position10>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="104" Column="16" TopLine="88"/>
+      </Position10>
+      <Position11>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="93" Column="15" TopLine="88"/>
+      </Position11>
+      <Position12>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="106" Column="37" TopLine="88"/>
+      </Position12>
+      <Position13>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="120" Column="27" TopLine="100"/>
+      </Position13>
+      <Position14>
+        <Filename Value="merge4listas.lpr"/>
+        <Caret Line="88" Column="85" TopLine="76"/>
+      </Position14>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

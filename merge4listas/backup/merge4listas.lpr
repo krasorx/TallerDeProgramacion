@@ -60,7 +60,7 @@ begin
      p := nue;
  ult := nue;
 
- EliminarLibro(p);
+ //EliminarLibro(p);
 end;
 procedure CargarLibros(var l:libro);
 begin
@@ -85,11 +85,12 @@ begin
      end;
 end;
 
-function DeterminarMinimo(v: vectorBiblio): integer;
+procedure DeterminarMinimo(var v: vectorBiblio; var book:libro; var posmin:integer);
 var
-min, i, posmin : integer;
+min, i: integer;
 Begin
  min:=MAXINT;
+ posmin := 999;
  for i:= 1 to dimF do
     begin
        if v[i] <> nil then begin
@@ -99,18 +100,25 @@ Begin
          end;
        end;
     end;
- DeterminarMinimo:= posMin;
-
+ writeln(posmin);
+ if (posmin <> 999) then
+    book := v[posmin]^.datos;
+ if (v[posmin] <> nil) then
+    v[posmin] := v[posmin]^.sig;
 end;
-
-
 procedure Merge4(var v : vectorBiblio; var ln : lista );
 var
    aux : lista;
-   pos : integer;
+   posmin : integer;
+   book : libro;
+   condicion : boolean;
 begin
- pos := DeterminarMinimo(v);
- AgregarAlFinal(v[pos],v[pos], v[pos]^.datos );
+ DeterminarMinimo(v,book,posmin);
+ while(posmin <> 999) do begin
+
+   AgregarAlFinal(ln,aux, book );
+   DeterminarMinimo(v,book,posmin);
+ end;
 end;
 
 Procedure ImprimirLista ( pri : lista);
@@ -130,6 +138,6 @@ begin
   InicializarVector(vBiblio);
   CrearVector4Listas(vBiblio);
   Merge4(vBiblio, listaNueva);
-  ImprimirLista(ListaNueva)
+  ImprimirLista(ListaNueva);
   readLn();
 end.
