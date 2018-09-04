@@ -113,18 +113,36 @@ Begin
  if (v[posmin] <> nil) then
     v[posmin] := v[posmin]^.sig;
 end;
-procedure Merge4(var v : vectorBiblio; var ln : lista );
+procedure AcumularGastos(var gi:gastosInd ; var gt:gastosTot);
+var
+   act : integer;
+begin
+ if (gi.tipoConsumo = act) do
+     begin
+       gt.tipoConsumo:= act;
+       gt.monto := gt.monto + gi.monto;
+     end;
+end;
+
+procedure MergeAcumulador(var v : vectorGastosI var ln : listaT );
 var
    aux : lista;
    posmin : integer;
-   book : libro;
-   condicion : boolean;
+   g : gastosInd;
+   gt : gastosTot;
+   act: integer;
 begin
- DeterminarMinimo(v,book,posmin);
+ DeterminarMinimo(v,g,posmin);
  while(posmin <> 999) do begin
-
-   AgregarAlFinal(ln,aux, book );
-   DeterminarMinimo(v,book,posmin);
+   act:=g.tipoConsumo;
+   while tenga el mismo tipo
+         sumo
+         calculo minimo
+   agrego con act y la suma
+         gt.monto := 0;
+     AcumularGastos(g,gt);
+   AgregarAlFinal(ln,aux, gt );
+   DeterminarMinimo(v,g,posmin);
  end;
 end;
 

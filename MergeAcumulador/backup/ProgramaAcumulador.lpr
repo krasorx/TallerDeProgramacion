@@ -93,6 +93,51 @@ begin
 
 end;
 
+procedure DeterminarMinimo(var v: vectorlistasI; var g:gastosInd; var posmin:integer);
+var
+min, i: integer;
+Begin
+ min:=MAXINT;
+ posmin := 999;
+ for i:= 1 to dimF do
+    begin
+       if v[i] <> nil then begin
+         if(v[i]^.datos.tipoConsumo < min) then begin
+                  min:= V[i]^.datos.tipoConsumo ;
+                  posMin:= i;
+         end;
+       end;
+    end;
+ if (posmin <> 999) then
+    book := v[posmin]^.datos;
+ if (v[posmin] <> nil) then
+    v[posmin] := v[posmin]^.sig;
+end;
+procedure AcumularGastos(var gi:gastosInd ; var gt:gastosTot);
+var
+   act : integer;
+begin
+ act := gi.tipoConsumo;
+ while (gi.tipoConsumo = act) do
+     begin
+       act := act + 1 ;
+     end;
+end;
+
+procedure MergeAcumulador(var v : vectorGastosI var ln : listaT );
+var
+   aux : lista;
+   posmin : integer;
+   g : gastosInd;
+   gt : gastosTot;
+begin
+ DeterminarMinimo(v,g,posmin);
+ while(posmin <> 999) do begin
+   AcumularGastos(g,gt);
+   AgregarAlFinal(ln,aux, gt );
+   DeterminarMinimo(v,g,posmin);
+ end;
+end;
 
 
 
