@@ -125,25 +125,9 @@ Begin
      writeln('se llego al final de la lista');
      if ((v[1] = nil) AND (V[2] = nil)) then hayconsumos := false;
 end;
-{procedure SumaMonto(g : gastosInd ; var monto : real; var v: vectorListasI ;
-                      var posmin,act:integer);
-begin
- monto := 0;
- writeLn('Entra a suma monto');
- writeLN('tipo consumo : ', g.tipoConsumo, ' y actual : ',act);
-    while (g.tipoConsumo = act) do
-       begin
-         writeLn('Entro al while suma monto');
-         monto := monto + g.Monto;
-         writeln('monto : ', monto:4:4);
-         DeterminarMinimo(v,g,posmin,hayConsumos);
-         if(v[posmin] = nil) then g.tipoConsumo := -1;
-         //writeLn(act);
-       end;
-end; }
 procedure MergeAcumulador(var v : vectorListasI; var ln : listaT );
-var
-   aux : listaT;
+var                             //Anda bien, exepto que no suma ni agrega a la
+   aux : listaT;                //lista el ultimo valor ingresado
    posmin : integer;
    g : gastosInd;
    gt : gastosTot;
@@ -152,31 +136,31 @@ var
    hayConsumos : boolean;
 begin
  hayConsumos := true;
+ aux := nil;
  monto := 0;
  DeterminarMinimo(v,g,posmin,hayConsumos);
  hayConsumos := true;
  while(HayConsumos)do
     begin
-      //monto := monto + g.Monto;
       montoAct := 0;
       act := g.tipoConsumo;
+      gt.tipoConsumo:= g.tipoConsumo;
       while((act = g.tipoConsumo)AND (hayConsumos))do
          begin
            writeLn('WRYYYYYYYYYYYYYY');
-           montoAct := monto + g.Monto;
-           gt.tipoConsumo:= g.tipoConsumo;
+           montoAct := montoAct + g.Monto;
            DeterminarMinimo(v,g,posmin,hayConsumos);
+           monto := montoAct;
          end;
            writeLn('salio del bucle interno');
            gt.Monto := montoAct;
            AgregarAlFinal(ln,aux,gt);
-           if ((v[1] = nil) AND (V[2] = nil)) then hayconsumos := false;
     end;
 end;
 procedure ImprimirListaNueva(pri:listaT);
 begin
   while (pri <> NIL) do begin
-   writeLn('Lista nueva:');
+   writeLn('Lista nueva: ');
    writeln ('Monto : ',pri^.datos.Monto:5:2) ;
    writeln ('Tipo de consumo : ',pri^.datos.tipoConsumo) ;
           pri:= pri^.sig
