@@ -61,7 +61,6 @@ begin
  else
      p := nue;
  ult := nue;
-
 end;
 procedure CargarGastos(var g:gastosInd);
 begin
@@ -94,9 +93,9 @@ begin
 end;
 procedure DeterminarMinimo(var v: vectorlistasI; var g:gastosInd; var posmin:integer);
 var
-min, i: integer;
+   min, i: integer;
 Begin
- min:=MAXINT;
+ min := MAXINT;
  posmin := 999;
  for i:= 1 to dimF do
     begin
@@ -110,18 +109,9 @@ Begin
  if (posmin <> 999) then
     g := v[posmin]^.datos;
  if (v[posmin] <> nil) then
-    v[posmin] := v[posmin]^.sig;
-end;
-procedure AcumularGastos(var gi:gastosInd ; var gt:gastosTot);
-var
-   act : integer;
-begin
- act := 1;
- if (gi.tipoConsumo = act) then
-     begin
-       gt.tipoConsumo:= act;
-       gt.monto := gt.monto + gi.monto;
-     end;
+    v[posmin] := v[posmin]^.sig      //reacomodo de lista
+ else
+     posmin := 999;
 end;
 procedure MergeAcumulador(var v : vectorListasI; var ln : listaT );
 var
@@ -132,21 +122,21 @@ var
    act: integer;
    monto : real;
 begin
+ aux := NIL;
+ writeLn('entro al merge');
  DeterminarMinimo(v,g,posmin);
+ act := g.tipoConsumo;
  while(posmin <> 999) do begin
-   act := g.tipoConsumo;
+   writeLn('entro al while del merge');
    monto := 0;
    while (g.tipoConsumo = act) do
        begin
          monto := monto + g.Monto;
-         DeterminarMinimo(v,g,posmin);
          gt.tipoConsumo := act;
-         if (v[posmin] <> NIL) then
-            v[posmin] := v[posmin]^.sig;
+         DeterminarMinimo(v,g,posmin);
        end;
    gt.monto := monto;
    //agrego con act y la suma
-   //AcumularGastos(g,gt);
    AgregarAlFinal(ln,aux, gt );
    DeterminarMinimo(v,g,posmin);
  end;
@@ -154,7 +144,8 @@ end;
 procedure ImprimirListaNueva(pri:listaT);
 begin
   while (pri <> NIL) do begin
-   writeln (pri^.datos.Monto) ;
+   writeln ('Monto : ',pri^.datos.Monto:5:2) ;
+   writeln ('Tipo de consumo : ',pri^.datos.tipoConsumo) ;
           pri:= pri^.sig
   end;
   writeLn('Lista impresa...');
@@ -171,7 +162,6 @@ begin
    writeLn('Lista impresa...',I);
  end;
 end;
-
 var
    lt : listaT;
    v : vectorListasI;
