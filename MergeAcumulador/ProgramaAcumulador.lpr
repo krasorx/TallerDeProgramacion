@@ -156,6 +156,11 @@ begin
            gt.Monto := montoAct;
            AgregarAlFinal(ln,aux,gt);
     end;
+ montoAct := 0;
+ montoAct := montoAct + g.Monto;
+ gt.tipoConsumo:= g.tipoConsumo;
+ gt.Monto := montoAct;
+ AgregarAlFinal(ln,aux,gt);
 end;
 procedure ImprimirListaNueva(pri:listaT);
 begin
