@@ -12,14 +12,14 @@ type
       Monto : real;
     end;
  //Creamos la lista gastoIND
-    listaI = ^nodo;
-    nodo = record
+    listaI = ^nodoI;
+    nodoI = record
          datos : gastosInd;
          sig : listaI;
     end;
      //Creamos la lista gastoTOT
-    listaT = ^nodo;
-    nodo = record
+    listaT = ^nodoT;
+    nodoT = record
          datos : gastosTot;
          sig : listaT;
     end;
@@ -29,30 +29,29 @@ var
   i : integer;
 begin
    for i:= 1 to dimF do
-       v[i] := nil;
+       v[i] := NIL;
 end;
    Procedure CrearListaOrdenada ( var pri: listaI; g: gastosInd);
    var
-      ant, nue, act: lista;
+      ant, nue, act: listaI;
    begin
      new (nue);
      nue^.datos := g;
      act := pri;
      ant := pri;
    {Recorro mientras no se termine la lista y no encuentro la posicion correcta}
-     while (act<>NIL) and (act^.datos.tipoConsumo< g.tipoConsumo) do begin
-         ant := act;
-         act := act^.sig ;
-     end;
+     while (act<>NIL) and (act^.datos.tipoConsumo< g.tipoConsumo) do
+         begin
+           ant := act;
+           act := act^.sig ;
+         end;
      if (ant = act)  then pri := nue   {el dato va al principio}
                      else  ant^.sig  := nue; {va entre otros dos o al final}
      nue^.sig := act ;
    end;
-
-Procedure AgregarAlFinal(var p, Ult: lista; var g: gastoTot );
+Procedure AgregarAlFinal(var p, Ult: listaT; var g: gastosTot );
 Var
-nue : lista;
-
+nue : listaT;
 begin
  new (nue);
  nue^.datos:= g;
@@ -64,35 +63,35 @@ begin
  ult := nue;
 
 end;
-
-Procedure CrearVectorListas (var v: vectorlistasI);
-var
-   g : gastoI;
-   i: integer;
-begin
- CargarGastos(g);
- while (tipoConsumo<>0) do
-     begin
-       for i:=1 to dimF do
-       begin
-         CrearListaOrdenada(v[i],g);
-         CargarGastos(g);
-
-       end;
-
-     end;
-end;
 procedure CargarGastos(var g:gastosInd);
 begin
  Randomize;
- g.tipoConsumo= random(6);
- write('Ingresar fecha : ');
- readln(g.fecha);
- write('Ingresar monto : ');
- readln(g.Monto);
-
+ //g.tipoConsumo := random(6);
+ writeLn('Ingresar tipo de consumo (0 para finalizar)');
+ readLn(g.tipoConsumo);
+ if (g.tipoConsumo <> 0) then begin
+   write('Ingresar fecha : ');
+   readln(g.fecha);
+   write('Ingresar monto : ');
+   readln(g.Monto);
+ end;
 end;
-
+Procedure CrearVectorListas (var v: vectorlistasI);
+var
+   g : gastosInd;
+   i : integer;
+begin
+ CargarGastos(g);
+ while (g.tipoConsumo <> 0 ) do
+     begin
+       i := 1;
+       while((i <= dimF) AND (g.tipoConsumo <> 0)) do
+       begin
+         CrearListaOrdenada(v[i],g);
+         CargarGastos(g);
+       end;
+     end;
+end;
 procedure DeterminarMinimo(var v: vectorlistasI; var g:gastosInd; var posmin:integer);
 var
 min, i: integer;
@@ -109,7 +108,7 @@ Begin
        end;
     end;
  if (posmin <> 999) then
-    book := v[posmin]^.datos;
+    g := v[posmin]^.datos;
  if (v[posmin] <> nil) then
     v[posmin] := v[posmin]^.sig;
 end;
@@ -117,30 +116,72 @@ procedure AcumularGastos(var gi:gastosInd ; var gt:gastosTot);
 var
    act : integer;
 begin
- act := gi.tipoConsumo;
- while (gi.tipoConsumo = act) do
+ act := 1;
+ if (gi.tipoConsumo = act) then
      begin
-       act := act + 1 ;
+       gt.tipoConsumo:= act;
+       gt.monto := gt.monto + gi.monto;
      end;
 end;
-
-procedure MergeAcumulador(var v : vectorGastosI var ln : listaT );
+procedure MergeAcumulador(var v : vectorListasI; var ln : listaT );
 var
-   aux : lista;
+   aux : listaT;
    posmin : integer;
    g : gastosInd;
    gt : gastosTot;
+   act: integer;
+   monto : real;
 begin
  DeterminarMinimo(v,g,posmin);
  while(posmin <> 999) do begin
-   AcumularGastos(g,gt);
+   act := g.tipoConsumo;
+   monto := 0;
+   while (g.tipoConsumo = act) do
+       begin
+         monto := monto + g.Monto;
+         DeterminarMinimo(v,g,posmin);
+         gt.tipoConsumo := act;
+         if (v[posmin] <> NIL) then
+            v[posmin] := v[posmin]^.sig;
+       end;
+   gt.monto := monto;
+   //agrego con act y la suma
+   //AcumularGastos(g,gt);
    AgregarAlFinal(ln,aux, gt );
    DeterminarMinimo(v,g,posmin);
  end;
 end;
-
-
-
+procedure ImprimirListaNueva(pri:listaT);
 begin
+  while (pri <> NIL) do begin
+   writeln (pri^.datos.Monto) ;
+          pri:= pri^.sig
+  end;
+  writeLn('Lista impresa...');
+end;
+Procedure Imprimir2Listas(v:vectorListasI);
+var
+   i : integer;
+begin
+ for i:=1 to dimF do begin
+   while (v[i] <> NIL) do begin
+    writeln (v[i]^.datos.Monto) ;
+           v[i]:= v[i]^.sig
+   end;
+   writeLn('Lista impresa...',I);
+ end;
+end;
+
+var
+   lt : listaT;
+   v : vectorListasI;
+begin
+  lt := NIL;
+  InicializarVector(v);
+  CrearVectorListas(v);
+  Imprimir2Listas(v);
+  MergeAcumulador(v,lt);
+  ImprimirListaNueva(lt);
+  readLn();
 end.
 
