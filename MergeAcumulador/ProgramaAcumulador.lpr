@@ -129,12 +129,13 @@ begin
  while(posmin <> 999) do begin
    writeLn('entro al while del merge');
    monto := 0;
-   while (g.tipoConsumo = act) do
+   while ((g.tipoConsumo = act)) do
        begin
          monto := monto + g.Monto;
          gt.tipoConsumo := act;
          DeterminarMinimo(v,g,posmin);
-         if () then
+         if(v[posmin] = nil) then act := -1;
+         //writeLn(act);
        end;
    gt.monto := monto;
    //agrego con act y la suma
@@ -145,6 +146,7 @@ end;
 procedure ImprimirListaNueva(pri:listaT);
 begin
   while (pri <> NIL) do begin
+   writeLn('Lista nueva:');
    writeln ('Monto : ',pri^.datos.Monto:5:2) ;
    writeln ('Tipo de consumo : ',pri^.datos.tipoConsumo) ;
           pri:= pri^.sig

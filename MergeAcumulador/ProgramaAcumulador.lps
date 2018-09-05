@@ -9,105 +9,133 @@
         <Filename Value="ProgramaAcumulador.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="114"/>
-        <CursorPos X="39" Y="136"/>
-        <UsageCount Value="24"/>
+        <TopLine Value="119"/>
+        <CursorPos X="44" Y="137"/>
+        <UsageCount Value="26"/>
         <Loaded Value="True"/>
       </Unit0>
     </Units>
-    <JumpHistory Count="23" HistoryIndex="22">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="5" Column="24"/>
+        <Caret Line="54" Column="13" TopLine="55"/>
       </Position1>
       <Position2>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="22" Column="10" TopLine="5"/>
+        <Caret Line="76" Column="6" TopLine="64"/>
       </Position2>
       <Position3>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="54" Column="13" TopLine="55"/>
+        <Caret Line="119" Column="11" TopLine="104"/>
       </Position3>
       <Position4>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="76" Column="6" TopLine="64"/>
+        <Caret Line="52" Column="44" TopLine="42"/>
       </Position4>
       <Position5>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="119" Column="11" TopLine="104"/>
+        <Caret Line="88" Column="26" TopLine="66"/>
       </Position5>
       <Position6>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="52" Column="44" TopLine="42"/>
+        <Caret Line="86" Column="40" TopLine="29"/>
       </Position6>
       <Position7>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="88" Column="26" TopLine="66"/>
+        <Caret Line="39" Column="22" TopLine="32"/>
       </Position7>
       <Position8>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="86" Column="40" TopLine="29"/>
+        <Caret Line="21" Column="20" TopLine="46"/>
       </Position8>
       <Position9>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="39" Column="22" TopLine="32"/>
+        <Caret Line="110" Column="31" TopLine="85"/>
       </Position9>
       <Position10>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="21" Column="20" TopLine="46"/>
+        <Caret Line="52" Column="59" TopLine="37"/>
       </Position10>
       <Position11>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="110" Column="31" TopLine="85"/>
+        <Caret Line="118" Column="32" TopLine="102"/>
       </Position11>
       <Position12>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="52" Column="59" TopLine="37"/>
+        <Caret Line="142" Column="6" TopLine="115"/>
       </Position12>
       <Position13>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="118" Column="32" TopLine="102"/>
+        <Caret Line="126" Column="10" TopLine="110"/>
       </Position13>
       <Position14>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="142" Column="6" TopLine="115"/>
+        <Caret Line="124" Column="48" TopLine="110"/>
       </Position14>
       <Position15>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="126" Column="10" TopLine="110"/>
+        <Caret Line="159" Column="13" TopLine="134"/>
       </Position15>
       <Position16>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="124" Column="48" TopLine="110"/>
+        <Caret Line="121" Column="23" TopLine="106"/>
       </Position16>
       <Position17>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="159" Column="13" TopLine="134"/>
+        <Caret Line="89" Column="51" TopLine="79"/>
       </Position17>
       <Position18>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="121" Column="23" TopLine="106"/>
+        <Caret Line="165" Column="26" TopLine="139"/>
       </Position18>
       <Position19>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="89" Column="51" TopLine="79"/>
+        <Caret Line="145" Column="23" TopLine="125"/>
       </Position19>
       <Position20>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="165" Column="26" TopLine="139"/>
+        <Caret Line="124" Column="39" TopLine="114"/>
       </Position20>
       <Position21>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="145" Column="23" TopLine="125"/>
+        <Caret Line="138" Column="42" TopLine="116"/>
       </Position21>
       <Position22>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="124" Column="39" TopLine="114"/>
+        <Caret Line="136" Column="39" TopLine="115"/>
       </Position22>
       <Position23>
         <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="138" Column="42" TopLine="116"/>
+        <Caret Line="139" Column="25" TopLine="112"/>
       </Position23>
+      <Position24>
+        <Filename Value="ProgramaAcumulador.lpr"/>
+        <Caret Line="132" Column="30" TopLine="116"/>
+      </Position24>
+      <Position25>
+        <Filename Value="ProgramaAcumulador.lpr"/>
+        <Caret Line="148" Column="14" TopLine="131"/>
+      </Position25>
+      <Position26>
+        <Filename Value="ProgramaAcumulador.lpr"/>
+        <Caret Line="139" Column="29" TopLine="132"/>
+      </Position26>
+      <Position27>
+        <Filename Value="ProgramaAcumulador.lpr"/>
+        <Caret Line="147" Column="11" TopLine="131"/>
+      </Position27>
+      <Position28>
+        <Filename Value="ProgramaAcumulador.lpr"/>
+        <Caret Line="140" Column="12" TopLine="128"/>
+      </Position28>
+      <Position29>
+        <Filename Value="ProgramaAcumulador.lpr"/>
+        <Caret Line="134" Column="38" TopLine="127"/>
+      </Position29>
+      <Position30>
+        <Filename Value="ProgramaAcumulador.lpr"/>
+        <Caret Line="141" Column="23" TopLine="118"/>
+      </Position30>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
