@@ -56,6 +56,7 @@ begin
  new (nue);
  nue^.datos:= g;
  nue^.sig := NIL;
+ writeLn('Se agrega un valor a la lista.');
  if p <> Nil then
     ult^.sig := nue
  else
@@ -132,7 +133,7 @@ begin
        begin
          writeLn('Entro al while suma monto');
          monto := monto + g.Monto;
-         writeln('monto : ', monto);
+         writeln('monto : ', monto:4:4);
          DeterminarMinimo(v,g,posmin);
          if(v[posmin] = nil) then g.tipoConsumo := -1;
          //writeLn(act);
@@ -146,14 +147,16 @@ var
    gt : gastosTot;
    act: integer;
    monto : real;
+   listaTieneAlgo : boolean;
 begin
  aux := NIL;
+ listaTieneAlgo := true;
  posmin := 1;
  writeLn('entro al merge');
  DeterminarMinimo(v,g,posmin);
  act := g.tipoConsumo;
  writeLn('posmin : ',posmin);
- while(posmin <> 999) do begin
+ while(listaTieneAlgo) do begin
    writeLn('entro al while del merge');
    monto := 0;
    SumaMonto(g,monto,v,posmin,act);
@@ -163,6 +166,7 @@ begin
    AgregarAlFinal(ln,aux, gt );
    DeterminarMinimo(v,g,posmin);
    act := g.tipoConsumo;
+   if (v[1] = nil) OR (v[2] = NIL) then ListaTieneAlgo := false;
  end;
 end;
 procedure ImprimirListaNueva(pri:listaT);
