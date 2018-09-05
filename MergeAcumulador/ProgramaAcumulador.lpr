@@ -88,6 +88,9 @@ begin
        begin
          CrearListaOrdenada(v[i],g);
          CargarGastos(g);
+         if (i = 2) then
+            i := 1
+         else i := i + 1;
        end;
      end;
 end;
