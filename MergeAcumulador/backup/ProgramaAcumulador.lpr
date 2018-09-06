@@ -56,6 +56,7 @@ begin
  new (nue);
  nue^.datos:= g;
  nue^.sig := NIL;
+ writeLn('Se agrega un valor a la lista.');
  if p <> Nil then
     ult^.sig := nue
  else
@@ -64,7 +65,7 @@ begin
 end;
 procedure CargarGastos(var g:gastosInd);
 begin
- Randomize;
+ //Randomize;
  //g.tipoConsumo := random(6);
  writeLn('Ingresar tipo de consumo (0 para finalizar)');
  readLn(g.tipoConsumo);
@@ -88,13 +89,18 @@ begin
        begin
          CrearListaOrdenada(v[i],g);
          CargarGastos(g);
+         if (i = 2) then
+            i := 1
+         else i := i + 1;
        end;
      end;
 end;
-procedure DeterminarMinimo(var v: vectorlistasI; var g:gastosInd; var posmin:integer);
+procedure DeterminarMinimo(var v: vectorlistasI; var g:gastosInd;
+                      var posmin:integer;var hayConsumos:boolean);
 var
    min, i: integer;
 Begin
+ writeln('entro a determinarminimo');
  min := MAXINT;
  posmin := 999;
  for i:= 1 to dimF do
@@ -103,47 +109,63 @@ Begin
          if(v[i]^.datos.tipoConsumo < min) then begin
                   min:= V[i]^.datos.tipoConsumo ;
                   posMin:= i;
+                  writeLn('POSMIN : ',posMin);
          end;
        end;
     end;
- if (posmin <> 999) then
+ if (posmin <> 999) then begin
     g := v[posmin]^.datos;
- if (v[posmin] <> nil) then
-    v[posmin] := v[posmin]^.sig      //reacomodo de lista
+    writeLn('Se asigna G');
+ end;
+ if (v[posmin] <> nil) then begin
+    v[posmin] := v[posmin]^.sig;      //reacomodo de lista
+    writeLn('avanzo');
+ end
  else
-     posmin := 999;
+     writeln('se llego al final de la lista');
+     if ((v[1] = nil) AND (V[2] = nil)) then hayconsumos := false;
 end;
 procedure MergeAcumulador(var v : vectorListasI; var ln : listaT );
-var
-   aux : listaT;
+var                             //Anda bien, exepto que no suma ni agrega a la
+   aux : listaT;                //lista el ultimo valor ingresado
    posmin : integer;
    g : gastosInd;
    gt : gastosTot;
-   act: integer;
-   monto : real;
+   act,i : integer;
+   monto,montoAct : real;
+   hayConsumos : boolean;
 begin
- aux := NIL;
- writeLn('entro al merge');
- DeterminarMinimo(v,g,posmin);
- act := g.tipoConsumo;
- while(posmin <> 999) do begin
-   writeLn('entro al while del merge');
-   monto := 0;
-   while (g.tipoConsumo = act) do
-       begin
-         monto := monto + g.Monto;
-         gt.tipoConsumo := act;
-         DeterminarMinimo(v,g,posmin);
-       end;
-   gt.monto := monto;
-   //agrego con act y la suma
-   AgregarAlFinal(ln,aux, gt );
-   DeterminarMinimo(v,g,posmin);
- end;
+ aux := nil;
+ monto := 0;
+ i:= 0 ;
+ DeterminarMinimo(v,g,posmin,hayConsumos);
+ hayConsumos := true;
+ while(HayConsumos)do
+    begin
+      montoAct := 0;
+      act := g.tipoConsumo;
+      gt.tipoConsumo:= g.tipoConsumo;
+      while(act = g.tipoConsumo)do
+         begin
+           if not(hayConsumos) then act := 0;
+           montoAct := montoAct + g.Monto;
+           DeterminarMinimo(v,g,posmin,hayConsumos);
+           monto := montoAct;
+         end;
+           writeLn('salio del bucle interno');
+           gt.Monto := montoAct;
+           AgregarAlFinal(ln,aux,gt);
+    end;
+ montoAct := 0;
+ montoAct := montoAct + g.Monto;
+ gt.tipoConsumo:= g.tipoConsumo;
+ gt.Monto := montoAct;
+ AgregarAlFinal(ln,aux,gt);
 end;
 procedure ImprimirListaNueva(pri:listaT);
 begin
   while (pri <> NIL) do begin
+   writeLn('Lista nueva: ');
    writeln ('Monto : ',pri^.datos.Monto:5:2) ;
    writeln ('Tipo de consumo : ',pri^.datos.tipoConsumo) ;
           pri:= pri^.sig

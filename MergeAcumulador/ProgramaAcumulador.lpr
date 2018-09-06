@@ -126,8 +126,8 @@ Begin
      if ((v[1] = nil) AND (V[2] = nil)) then hayconsumos := false;
 end;
 procedure MergeAcumulador(var v : vectorListasI; var ln : listaT );
-var                             //Anda bien, exepto que no suma ni agrega a la
-   aux : listaT;                //lista el ultimo valor ingresado
+var
+   aux : listaT;
    posmin : integer;
    g : gastosInd;
    gt : gastosTot;
@@ -135,9 +135,9 @@ var                             //Anda bien, exepto que no suma ni agrega a la
    monto,montoAct : real;
    hayConsumos : boolean;
 begin
- hayConsumos := true;
  aux := nil;
  monto := 0;
+ i:= 0 ;
  DeterminarMinimo(v,g,posmin,hayConsumos);
  hayConsumos := true;
  while(HayConsumos)do
@@ -145,9 +145,9 @@ begin
       montoAct := 0;
       act := g.tipoConsumo;
       gt.tipoConsumo:= g.tipoConsumo;
-      while((act = g.tipoConsumo)AND (hayConsumos))do
+      while(act = g.tipoConsumo)do
          begin
-           writeLn('WRYYYYYYYYYYYYYY');
+           if not(hayConsumos) then act := 0;
            montoAct := montoAct + g.Monto;
            DeterminarMinimo(v,g,posmin,hayConsumos);
            monto := montoAct;
