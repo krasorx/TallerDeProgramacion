@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="101"/>
+        <CursorPos X="15" Y="127"/>
+        <FoldState Value=" TLi70Ck"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="18" HistoryIndex="17">
+      <Position1>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="33" Column="12" TopLine="13"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="82" Column="56" TopLine="67"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="24" Column="9" TopLine="13"/>
+      </Position3>
+      <Position4>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="30" Column="17" TopLine="14"/>
+      </Position4>
+      <Position5>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="72" Column="25" TopLine="45"/>
+      </Position5>
+      <Position6>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="61" Column="68" TopLine="45"/>
+      </Position6>
+      <Position7>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="98" Column="15" TopLine="75"/>
+      </Position7>
+      <Position8>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="90" Column="17" TopLine="74"/>
+      </Position8>
+      <Position9>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="92" Column="6" TopLine="73"/>
+      </Position9>
+      <Position10>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="30" Column="18" TopLine="15"/>
+      </Position10>
+      <Position11>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="104" Column="4" TopLine="89"/>
+      </Position11>
+      <Position12>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="115" Column="19" TopLine="90"/>
+      </Position12>
+      <Position13>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="80" Column="60" TopLine="49"/>
+      </Position13>
+      <Position14>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="73" Column="24" TopLine="48"/>
+      </Position14>
+      <Position15>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="121" Column="40" TopLine="93"/>
+      </Position15>
+      <Position16>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="74" Column="22" TopLine="48"/>
+      </Position16>
+      <Position17>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="78" Column="13" TopLine="49"/>
+      </Position17>
+      <Position18>
+        <Filename Value="ProgramaPalindrome.lpr"/>
+        <Caret Line="103" Column="19" TopLine="87"/>
+      </Position18>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
