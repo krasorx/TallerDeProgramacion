@@ -110,7 +110,7 @@ begin
                while (l<> nil) do begin
                   nivel := nivel + 1;
                   cant:= contarElementos(l);
-                  write ('Nivel ', nivel, ': ');
+                  write ('Nivel ', nivel, ': ',' ':(15 - nivel));
                   for i:= 1 to cant do begin
                     write (l^.info^.dato, ' - ');
                     if (l^.info^.HI <> nil) then agregarAtras (l,ult,l^.info^.HI);
@@ -141,6 +141,7 @@ begin
   GenerarLista(pri);
   writeLN('Lista en orden : ');
   ImprimirListaEnOrdenInverso(pri);
+  write('|',pri^.datos,'|');
   writeLn();
   ArmarArbolito(pri,arb);
 //  writeLn(arb^.dato);
