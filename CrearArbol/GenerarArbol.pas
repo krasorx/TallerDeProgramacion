@@ -126,11 +126,10 @@ end;
 Procedure ImprimirListaEnOrdenInverso ( pri : lista);
 Begin
  if (pri <> NIL) then begin
-   pri := pri^.sig;
-   ImprimirListaEnOrdenInverso(pri);
+   ImprimirListaEnOrdenInverso(pri^.sig);
    if (pri <> NIL) then write ('|',pri^.datos,'|') ;
  end;
-end;
+end; 
 var
   pri : lista;
   arb : arbol;
@@ -141,10 +140,8 @@ begin
   GenerarLista(pri);
   writeLN('Lista en orden : ');
   ImprimirListaEnOrdenInverso(pri);
-  write('|',pri^.datos,'|');
   writeLn();
   ArmarArbolito(pri,arb);
-//  writeLn(arb^.dato);
   ImprimirPorNivel(arb);
   readKey();
 end.
