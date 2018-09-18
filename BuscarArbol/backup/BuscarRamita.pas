@@ -63,18 +63,20 @@ begin
           aux:= aux^.sig;
   end;
 end;
-function BuscarRamita(arb : arbol; valor:integer):arbol;
+procedure BuscarRamita(arb : arbol; valor:integer; var aux:arbol);
 begin
-  if (arb <> nil) then
+  if (arb <> nil) then begin
     if(arb^.dato = valor) then
-       BuscarRamita:= arb
-    else
-        if (arb^.dato > valor) then
-             BuscarRamita := BuscarRamita(arb^.HI, valor)
+       aux:= arb
+       else begin
+          if (arb^.dato < valor) then
+          BuscarRamita(arb^.HI, valor, aux)
           else
-             BuscarRamita := BuscarRamita(arb^.HD, valor)
-  else
-      BuscarRamita := nil;
+             BuscarRamita(arb^.HD, valor, aux);
+       end;
+
+  end;
+   if (arb=nil) then aux:=arb;
 end;
 
 Procedure ImprimirListaEnOrdenInverso ( pri : lista);
@@ -92,7 +94,7 @@ begin
   randomize;
   arb := NIL;
   pri := NIL;
-  textColor(28);
+  textColor(26);
   GenerarLista(pri);
   writeLN('Lista en orden : ');
   ImprimirListaEnOrdenInverso(pri);
@@ -100,7 +102,10 @@ begin
   ArmarArbolito(pri,arb);
   write('Ingresar el valor a buscar : ');
   readLn(valor);
-  if (BuscarRamita(arb,valor) <> nil) then writeLn('bien')
+  BuscarRamita(arb,valor,punteroAnodo);
+  if (punteroAnodo <> nil) then writeLn(punteroAnodo^.dato)
   else writeLn('Waldo no esta');
   readKey();
 end.
+
+
