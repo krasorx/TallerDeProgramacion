@@ -76,6 +76,16 @@ begin
   else
       BuscarRamita := nil;
 end;
+procedure BuscarMin(arb : arbol;var min : integer);
+begin
+  if (arb <> nil) then
+    if(arb^.dato <= min ) then begin
+       min:= arb^.dato;
+       buscarMin(arb^.HI,min);
+    end
+  else
+     min := -1;
+end;
 
 Procedure ImprimirListaEnOrdenInverso ( pri : lista);
 Begin
@@ -87,11 +97,12 @@ end;
 var
   pri : lista;
   arb,punteroAnodo : arbol;
-  valor : integer;
+  valor,min : integer;
 begin
   randomize;
   arb := NIL;
   pri := NIL;
+  min := MAXINT;
   textColor(28);
   GenerarLista(pri);
   writeLN('Lista en orden : ');
@@ -102,5 +113,7 @@ begin
   readLn(valor);
   if (BuscarRamita(arb,valor) <> nil) then writeLn('bien')
   else writeLn('Waldo no esta');
+  BuscarMin(arb,min);
+  writeLN(MIN);
   readKey();
 end.
