@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="SuperMerca2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="78"/>
+        <CursorPos X="37" Y="100"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="7" HistoryIndex="6">
+      <Position1>
+        <Filename Value="SuperMerca2.pas"/>
+        <Caret Line="43" Column="11" TopLine="22"/>
+      </Position1>
+      <Position2>
+        <Filename Value="SuperMerca2.pas"/>
+        <Caret Line="33" Column="12" TopLine="17"/>
+      </Position2>
+      <Position3>
+        <Filename Value="SuperMerca2.pas"/>
+        <Caret Line="82" Column="21" TopLine="62"/>
+      </Position3>
+      <Position4>
+        <Filename Value="SuperMerca2.pas"/>
+        <Caret Line="75" Column="53" TopLine="55"/>
+      </Position4>
+      <Position5>
+        <Filename Value="SuperMerca2.pas"/>
+        <Caret Line="77" Column="36" TopLine="61"/>
+      </Position5>
+      <Position6>
+        <Filename Value="SuperMerca2.pas"/>
+        <Caret Line="89" Column="39" TopLine="62"/>
+      </Position6>
+      <Position7>
+        <Filename Value="SuperMerca2.pas"/>
+        <Caret Line="108" Column="16" TopLine="78"/>
+      </Position7>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
