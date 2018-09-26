@@ -129,7 +129,7 @@ begin
      writeLn('Ambulancia Nro ',i);
      textcolor(30);
      CargarEmergencia(E);
-     CrearListaAgregarAtras(v[i],OMEGA,e);
+     InsertarOrd(v[i],e);
      if (e.tipo <= 0) then begin
         i := i+1;
         writeLn();
