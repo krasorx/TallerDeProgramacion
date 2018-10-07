@@ -1,2 +1,2 @@
 # TallerDeProgramacion
-joaquinelmaspitulinAAArex777OMG/videosytutoriales.mp3
+Repositorio Taller de programacion unlp informatica, Grupo 39(o 37, no me acuerdo).
