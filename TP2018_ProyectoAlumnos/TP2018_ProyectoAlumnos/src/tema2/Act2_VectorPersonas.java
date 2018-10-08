@@ -12,7 +12,7 @@ public class Act2_VectorPersonas {
 		
 		Scanner cin = new Scanner(System.in);
 		
-		for(int i=0;i<df;i++)				// Cargamos los datos de las personas
+		for(int i=0;i<df;i++)									// Cargamos los datos de las personas
 		{
 			
 			System.out.print("Ingresar el nombre del chabon : ");
@@ -22,16 +22,16 @@ public class Act2_VectorPersonas {
 			System.out.print("Ingresar la edad del chabon : ");
 			edad = cin.nextInt();
 
-			vector[i] = new Persona(nombre,dni,edad);	
-			vector[0].toString();
+			vector[i] = new Persona(nombre,dni,edad);			// Creamos el objeto y lo cargamos con los parametros
+
 		}
 		
 		for(int i=0;i<df;i++)
 		{
-			if(vector[i].getEdad() > 65) cntM65++;
+			if(vector[i].getEdad() > 65) cntM65++;				// Si la edad es mayor a n, aumentamos en contador
 			if(vector[i].getDNI() < minDni) 
 			{
-				minDni = vector[i].getDNI();
+				minDni = vector[i].getDNI();					// almacenamos el indice del menor valor
 				indexMin = i;
 			}
 		}
@@ -39,7 +39,8 @@ public class Act2_VectorPersonas {
 		
 		System.out.println("Se ingresaron " + cntM65 + " mayores a 65 anyos." );
 		System.out.println("Datos de la persona con menor DNI : ");
-		vector[indexMin].toString();		
+		System.out.println(vector[indexMin].toString());		
+		System.out.println("Dni min = " + minDni);
 		
 		cin.close();
 		
