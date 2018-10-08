@@ -12,9 +12,9 @@ public class Libro {
    private String titulo;
    private String primerAutor; 
    private String editorial;
-   private int añoEdicion;
+   private int anyoEdicion;
    private String ISBN; 
-   private double precio; /*en dolares*/
+   private double precio; /*en dolars*/
      
     public String getTitulo(){
         return titulo;
@@ -23,8 +23,8 @@ public class Libro {
     public String getEditorial(){
         return editorial;
     }
-    public int getAñoEdicion(){
-        return añoEdicion;
+    public int getAnyoEdicion(){
+        return anyoEdicion;
     }
 
     public String getPrimerAutor(){
@@ -45,8 +45,8 @@ public class Libro {
     public void setEditorial(String unaEditorial){
          editorial = unaEditorial;
     }
-    public void setAñoEdicion(int unAño){
-         añoEdicion = unAño;
+    public void setAnyoEdicion(int unAnyo){
+         anyoEdicion = unAnyo;
     }
   
     public void setPrimerAutor(String unPrimerAutor){
@@ -63,7 +63,7 @@ public class Libro {
    @Override
     public String toString(){
         String aux; // Variable auxiliar utilizada por el metodo. No es parte del estado
-        aux=titulo + " por " + primerAutor + " - " + añoEdicion + " - ISBN: " + ISBN;
+        aux=titulo + " por " + primerAutor + " - " + anyoEdicion + " - ISBN: " + ISBN;
        return ( aux);
     }
         
