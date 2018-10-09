@@ -1,6 +1,8 @@
 package tema3;
 import java.util.*;
 
+
+
 public class Act1_Triangulos {
 
 	public static void main(String[] args) {
@@ -14,7 +16,7 @@ public class Act1_Triangulos {
 		b = cin.nextDouble();
 		System.out.print("Ingresar un lado de un triangulo : ");
 		c = cin.nextDouble();
-		
+                
 		triangulo.SetLados(a, b, c);
 		
 		System.out.print("Ingresar el color de relleno del triangulo : ");
