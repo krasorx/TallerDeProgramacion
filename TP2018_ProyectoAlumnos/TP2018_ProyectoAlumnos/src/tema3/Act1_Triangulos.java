@@ -24,9 +24,6 @@ public class Act1_Triangulos {
 		
 		System.out.println("El perimetro del triangulo es : " + (triangulo.CalcularPerimetro()));
 		System.out.println("El Area del triangulo es : " + (triangulo.CalcularArea()));
-		
-		
-
 	}
 
 }
