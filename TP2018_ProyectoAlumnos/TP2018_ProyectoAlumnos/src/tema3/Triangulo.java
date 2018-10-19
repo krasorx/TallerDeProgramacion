@@ -58,14 +58,4 @@ public class Triangulo {
 		double perimetro = (ladoA + ladoB + ladoC);
 		return perimetro;
 	}
-        
-    public boolean EsTriangulo()
-    {
-        if ((ladoA >= (ladoB + ladoC) || ladoB >= (ladoA + ladoC)) || ladoC >= (ladoA + ladoB)) {
-            return true;
-        } else { 
-            System.out.println("Los lados NO pueden formar un triángulo");
-            return false;
-        }   
-    }
 }
