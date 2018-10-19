@@ -5,10 +5,10 @@ public class Actividad5b_FlotaMicros {
 
 	public static void main(String[] args) {
 		short df = 15;
-		FlotaMicros micros[] = new FlotaMicros[df]; 
+		FlotaMicros micros = new FlotaMicros(); 
 		
 		for(int i=0;i<df;i++) {
-			micros[i] = new FlotaMicros();
+			micros = new FlotaMicros();
 		}
 		
 		String destino;
@@ -18,29 +18,29 @@ public class Actividad5b_FlotaMicros {
 		String patente = cin.nextLine();
 		short i = 0;
 		
-		while( (patente != "ZZZ000") && (micros[i].FlotaCompleta())) {
+		while( (patente != "ZZZ000")) {
 			System.out.print("Ingresar el destino : ");
 			destino = cin.nextLine();
 			System.out.print("Ingresar el horario de salida : ");
 			hora = cin.nextInt();
 			
 			Micro micro = new Micro(patente,destino,hora);
-			micros[i].AgregarMicro(micro);
+			micros.AgregarMicro(micro);
 			
 			System.out.print("Ingresar una patente (ZZZ000 para finalizar): ");
 			patente = cin.nextLine();
 			i++;
 		}
-		if (micros[i].FlotaCompleta()) System.out.println("Flota completa.");
+		if (micros.FlotaCompleta()) System.out.println("Flota completa.");
 		
 		System.out.print("Ingresar la patente del micro a eliminar de la flota : ");
 		patente = cin.nextLine();
-		micros[i].EliminarMicro(patente);
+		micros.EliminarMicro(patente);
 		
 		System.out.print("Ingresar el destino del micro del que desea obtener informacion : ");
 		destino = cin.nextLine();
-		System.out.println("El micro con patente " + micros[i].BuscarBondiDestino(destino).GetPatente() + " partira a su " + 
-							" destino a las " + micros[i].BuscarBondiDestino(destino).GetHoraSalida() + " horas.");
+		System.out.println("El micro con patente " + micros.BuscarBondiDestino(destino).GetPatente() + " partira a su " + 
+							" destino a las " + micros.BuscarBondiDestino(destino).GetHoraSalida() + " horas.");
 		
 		System.out.println("Programa finalizado.");
 		cin.close();
