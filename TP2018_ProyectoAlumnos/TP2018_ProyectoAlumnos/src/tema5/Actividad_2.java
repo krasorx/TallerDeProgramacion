@@ -13,7 +13,7 @@ public class Actividad_2 {
 		double salario = cin.nextDouble();
 		System.out.print("Ingresar la cantidad de goles realizadas por el jugador : ");
 		int goles = cin.nextInt();
-		System.out.print("Ingresar la cantidad de partidos que jugó : ");
+		System.out.print("Ingresar la cantidad de partidos que jugo : ");
 		int partidos = cin.nextInt();
 		
 		Jugador jugador = new Jugador(goles,partidos,nombre,salario);
