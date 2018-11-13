@@ -1,0 +1,41 @@
+programa Ejercicio2-3b {un robot recorre un rectangulo de 5x3 y devuelva las f }
+{encontradas empieza en 2,2 el segun robot en 6,2 y un area de 7x3} 
+areas
+  areaR1 : AreaP(2,2,7,5)
+  areaR2 : AreaP(6,2,13,5)
+robots 
+  robot tipo1
+  variables
+    num:numero 
+  comenzar
+    repetir 2
+      repetir 3
+        mientras(HayFlorEnLaEsquina)
+          tomarFlor
+          num := num + 1
+        mientras(HayFlorEnLaBolsa)
+          depositarFlor
+        mover
+      derecha
+      repetir 5
+        mientras(HayFlorEnLaEsquina)
+          tomarFlor
+          num := num + 1
+        mientras(HayFlorEnLaBolsa)
+          depositarFlor
+        mover
+      derecha
+      Informar(num)
+  fin 
+  robot tipo 2
+  variables
+  num : numero
+  comenzar
+  fin
+variables 
+  robot1: tipo1
+  robot2: tipo2
+comenzar 
+  AsignarArea(robot1,areaR1)
+  Iniciar(robot1, 2, 2)
+fin

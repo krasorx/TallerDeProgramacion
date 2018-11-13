@@ -1,0 +1,34 @@
+programa Bloquear {un robot recorre un rectangulo de 5x3 y devuelva las f 
+encontradas empieza en 2,2}
+areas
+  areaR1 : AreaP(2,2,7,5)
+robots 
+  robot tipo1
+  variables
+    num:numero 
+  comenzar
+    repetir 2
+      repetir 3
+        mientras(HayFlorEnLaEsquina)
+          tomarFlor
+          num := num + 1
+        mientras(HayFlorEnLaBolsa)
+          depositarFlor
+        mover
+      derecha
+      repetir 5
+        mientras(HayFlorEnLaEsquina)
+          tomarFlor
+          num := num + 1
+        mientras(HayFlorEnLaBolsa)
+          depositarFlor
+        mover
+      derecha
+      Informar(num)
+  fin 
+variables 
+  robot1: tipo1
+comenzar 
+  AsignarArea(robot1,areaR1)
+  Iniciar(robot1, 2, 2)
+fin
