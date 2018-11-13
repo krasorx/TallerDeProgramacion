@@ -1,0 +1,145 @@
+programa Ejercicio3-6 {un robot recorre un rectangulo de 5x3 y devuelva las f}
+                      { 6 robots (2,2) 6,2 10,2 14,2 18,2 22,2}
+procesos
+  proceso Posicionar(ES num : numero)
+  variables
+    calle : numero
+  comenzar
+    {si uso un proceso no funciona  }
+    RecibirMensaje(calle,robot7)
+    Pos(calle,10)
+  fin
+  proceso MaxFlores(E id : numero ; ES idMax : numero ; E num : numero; ES max : numero )
+  comenzar
+    si(max<num)
+      idMax := id
+      max := num
+  fin
+  proceso Rectangulo(ES id : numero)
+  variables
+    num : numero
+    alto : numero
+  comenzar
+    num := 0
+    Random(alto,10,98)
+    repetir 2
+      repetir alto
+        mientras(HayFlorEnLaEsquina)
+          tomarFlor
+          num := num + 1
+        mientras(HayFlorEnLaBolsa)
+          depositarFlor
+        mover
+      derecha
+      repetir 3
+        mientras(HayFlorEnLaEsquina)
+          tomarFlor
+          num := num + 1
+        mientras(HayFlorEnLaBolsa)
+          depositarFlor
+        mover
+      derecha
+    EnviarMensaje(id,robot7)
+    EnviarMensaje(num,robot7)
+    {Informar(num)}
+  fin 
+areas
+  areaR1 : AreaP(2,2,2,2){Arreglar area}
+  areaR12 : AreaP(12,10,15,100)
+  areaR2 : AreaP(6,2,6,2)
+  areaR3 : AreaP(10,2,10,2)
+  areaR4 : AreaP(14,2,14,2)
+  areaR5 : AreaP(18,2,18,2)
+  areaR6 : AreaP(22,2,22,2)
+  areaR7 : AreaP(50,50,50,50)
+  areaR22 : AreaP(16,10,19,100)
+  areaR32 : AreaP(20,10,23,100)
+  areaR42 : AreaP(24,10,27,100)
+  areaR52 : AreaP(28,10,31,100)
+  areaR62 : AreaP(32,10,35,100)
+robots 
+  robot tipo1
+  variables
+    num:numero 
+    calle : numero
+    id : numero
+  comenzar
+    calle := 2
+    RecibirMensaje(id,robot7)
+    RecibirMensaje(calle,robot7)
+    Pos(calle,10)
+    Rectangulo(num)
+  fin 
+  robot tipo2
+  variables
+    num : numero
+    total : numero
+    calle : numero
+    maxFlores : numero
+    id : numero
+    idMax : numero
+  comenzar
+    calle := 12
+    maxFlores := 0
+    id := -1
+    EnviarMensaje(id,robot1)
+    EnviarMensaje(calle,robot1)
+    calle := calle + 4
+    id := id + 1
+    EnviarMensaje(id,robot2)
+    EnviarMensaje(calle,robot2)
+    calle := calle + 4
+    id := id +1 
+    EnviarMensaje(id,robot3)
+    EnviarMensaje(calle,robot3)
+    calle := calle  + 4
+    id := id + 1
+    EnviarMensaje(id,robot4)
+    EnviarMensaje(calle,robot4)
+    calle := calle + 4
+    id := id + 1
+    EnviarMensaje(id,robot5)
+    EnviarMensaje(calle,robot5)
+    calle := calle + 4
+    id := id + 1
+    EnviarMensaje(id,robot6)
+    EnviarMensaje(calle,robot6)
+    total := 0
+    repetir 6
+      RecibirMensaje(id,*)
+      RecibirMensaje(num,*)
+      MaxFlores(id,idMax,num,maxFlores)
+      total := total + num
+    Informar(total)
+    Informar(idMax)
+  fin
+variables 
+  robot1: tipo1
+  robot2: tipo1
+  robot3: tipo1
+  robot4: tipo1
+  robot5: tipo1
+  robot6: tipo1
+  robot7: tipo2
+comenzar 
+  AsignarArea(robot1,areaR1)
+  AsignarArea(robot2,areaR2)
+  AsignarArea(robot3,areaR3)
+  AsignarArea(robot4,areaR4)
+  AsignarArea(robot5,areaR5)
+  AsignarArea(robot6,areaR6)
+  AsignarArea(robot7,areaR7)
+  AsignarArea(robot1,areaR12)
+  AsignarArea(robot2,areaR22)
+  AsignarArea(robot3,areaR32)
+  AsignarArea(robot4,areaR42)
+  AsignarArea(robot5,areaR52)
+  AsignarArea(robot6,areaR62)
+  Iniciar(robot1, 2, 2)
+  Iniciar(robot2 ,6, 2)
+  Iniciar(robot3 ,10, 2)
+  Iniciar(robot4 ,14, 2)
+  Iniciar(robot5 ,18, 2)
+  Iniciar(robot6 ,22, 2)
+  Iniciar(robot7,50,50)
+fin

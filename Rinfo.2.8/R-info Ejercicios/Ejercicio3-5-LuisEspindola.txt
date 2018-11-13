@@ -1,0 +1,152 @@
+programa Ejercicio3-4 {un robot recorre un rectangulo de 5x3 y devuelva las f}
+                      { 6 robots (2,2) 6,2 10,2 14,2 18,2 22,2}
+procesos
+  proceso Posicionar(ES num : numero)
+  variables
+    calle : numero
+  comenzar
+    {si uso un proceso no funciona  }
+    RecibirMensaje(calle,robot7)
+    Pos(calle,10)
+  fin
+  proceso Rectangulo(ES num : numero)
+  comenzar
+    repetir 2
+      repetir 5
+        mientras(HayFlorEnLaEsquina)
+          tomarFlor
+          num := num + 1
+        mientras(HayFlorEnLaBolsa)
+          depositarFlor
+        mover
+      derecha
+      repetir 3
+        mientras(HayFlorEnLaEsquina)
+          tomarFlor
+          num := num + 1
+        mientras(HayFlorEnLaBolsa)
+          depositarFlor
+        mover
+      derecha
+    EnviarMensaje(num,robot7)
+    Informar(num)
+  fin 
+areas
+  areaR1 : AreaP(2,2,2,2){Arreglar area}
+  areaR12 : AreaP(12,10,15,15)
+  areaR2 : AreaP(6,2,6,2)
+  areaR3 : AreaP(10,2,10,2)
+  areaR4 : AreaP(14,2,14,2)
+  areaR5 : AreaP(18,2,18,2)
+  areaR6 : AreaP(22,2,22,2)
+  areaR7 : AreaP(50,50,50,50)
+  areaR22 : AreaP(16,10,19,15)
+  areaR32 : AreaP(20,10,23,15)
+  areaR42 : AreaP(24,10,27,15)
+  areaR52 : AreaP(28,10,31,15)
+  areaR62 : AreaP(32,10,35,15)
+robots 
+  robot tipo1
+  variables
+    num:numero 
+    calle : numero
+  comenzar
+    calle := 2
+    RecibirMensaje(calle,robot7)
+    Pos(calle,10)
+    Rectangulo(num)
+  fin 
+  robot tipo2
+  variables
+    n : numero
+  comenzar
+    RecibirMensaje(n,robot7)
+    Pos(n,10)
+    Rectangulo(n)
+  fin
+  robot tipo3
+  variables
+    n : numero
+  comenzar
+    RecibirMensaje(n,robot7)
+    Pos(n,10)
+    Rectangulo(n)
+  fin
+  robot tipo4
+  variables
+    n : numero
+  comenzar
+    RecibirMensaje(n,robot7)
+    Pos(n,10)
+    Rectangulo(n)
+  fin
+  robot tipo5
+  variables
+    n : numero
+  comenzar
+    RecibirMensaje(n,robot7)
+    Pos(n,10)
+    Rectangulo(n)
+  fin
+  robot tipo6
+  variables
+    n : numero
+  comenzar
+    RecibirMensaje(n,robot7)
+    Pos(n,10)
+    Rectangulo(n)
+  fin
+  robot tipo7
+  variables
+    num : numero
+    total : numero
+    calle : numero
+  comenzar
+    calle := 12
+    EnviarMensaje(calle,robot1)
+    calle := calle + 4
+    EnviarMensaje(calle,robot2)
+    calle := calle + 4
+    EnviarMensaje(calle,robot3)
+    calle := calle  + 4
+    EnviarMensaje(calle,robot4)
+    calle := calle + 4
+    EnviarMensaje(calle,robot5)
+    calle := calle + 4
+    EnviarMensaje(calle,robot6)
+    total := 0
+    repetir 6
+      RecibirMensaje(num,*)
+      total := total + num
+    Informar(total)
+  fin
+variables 
+  robot1: tipo1
+  robot2: tipo2
+  robot3: tipo3
+  robot4: tipo4
+  robot5: tipo5
+  robot6: tipo6
+  robot7: tipo7
+comenzar 
+  AsignarArea(robot1,areaR1)
+  AsignarArea(robot2,areaR2)
+  AsignarArea(robot3,areaR3)
+  AsignarArea(robot4,areaR4)
+  AsignarArea(robot5,areaR5)
+  AsignarArea(robot6,areaR6)
+  AsignarArea(robot7,areaR7)
+  AsignarArea(robot1,areaR12)
+  AsignarArea(robot2,areaR22)
+  AsignarArea(robot3,areaR32)
+  AsignarArea(robot4,areaR42)
+  AsignarArea(robot5,areaR52)
+  AsignarArea(robot6,areaR62)
+  Iniciar(robot1, 2, 2)
+  Iniciar(robot2 ,6, 2)
+  Iniciar(robot3 ,10, 2)
+  Iniciar(robot4 ,14, 2)
+  Iniciar(robot5 ,18, 2)
+  Iniciar(robot6 ,22, 2)
+  Iniciar(robot7,50,50)
+fin
