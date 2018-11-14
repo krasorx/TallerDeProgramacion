@@ -1,0 +1,135 @@
+programa Ejercicio3-8 
+{Trabaje asumiendo que el enunciado pedia que cada robot intentara 3 veces hallar flores y solo me quedo con un valor de los 3 (el maximo) }
+procesos
+  proceso TeletransportarAEsquina(E aInf : numero; E aSup : numero)
+  variables
+    calle : numero
+    avenida : numero
+  comenzar
+    Random(calle,2,7)         
+    Random(avenida,aInf,aSup)
+    Pos(avenida,calle)        
+  fin
+  proceso JuntarFlores(ES flores : numero)
+  comenzar
+    flores := 0
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+      flores := flores +1
+  fin
+  proceso RefreshVars(ES aInf : numero; ES aSup : numero ; ES id : numero)
+  variables
+    d1 : numero
+  comenzar
+    d1 := 6
+    aInf := aInf + d1
+    aSup := aSup + d1
+    id := id + 1
+  fin
+  proceso MaxFlores(E num : numero; ES max : numero )
+  comenzar
+    si(max<num)
+      max := num
+  fin
+  proceso MaxFloresConID(E id : numero; ES idMax : numero ; E num : numero; ES max : numero )
+  comenzar
+    si(max<num)
+      max := num
+      idMax := id
+  fin
+areas
+  areaR1 : AreaP(2,2,7,7)
+  areaR2 : AreaP(8,2,13,7)
+  areaR3 : AreaP(14,2,19,7)
+  areaRF : AreaP(1,1,1,1)
+robots 
+  robot tipo1
+  variables
+    flores : numero 
+    maxFlores : numero
+    cInf : numero
+    cSup : numero
+    aInf : numero
+    aSup : numero
+    intentos : numero
+    centinela : numero
+    termino : boolean
+    id : numero
+  comenzar
+    intentos := 0
+    centinela := 3
+    maxFlores := -1
+    flores := 0
+
+    RecibirMensaje(id,robot4)
+    RecibirMensaje(aInf,robot4)
+    RecibirMensaje(aSup,robot4)
+
+    mientras(intentos < centinela)
+      TeletransportarAEsquina(aInf,aSup)
+      JuntarFlores(flores)
+      MaxFlores(flores,maxFlores)
+      intentos := intentos + 1
+
+    EnviarMensaje(id,robot4)
+    EnviarMensaje(maxFlores,robot4)
+  fin 
+  robot tipo2
+  variables
+    flores : numero
+    total : numero
+    cInf : numero
+    cSup : numero
+    aInf : numero
+    aSup : numero
+    maxFlores : numero
+    id : numero
+    idMax : numero
+  comenzar
+    cInf := 2
+    cSup := 7
+    aInf := 2
+    aSup := 7
+    maxFlores := -1
+    flores := 0
+    id := 100
+    idMax := -1
+
+    {robot 1}
+    EnviarMensaje(id,robot1)
+    EnviarMensaje(aInf,robot1)
+    EnviarMensaje(aSup,robot1)
+    RefreshVars(aInf,aSup,id)
+    {robot 2}
+    EnviarMensaje(id,robot2)
+    EnviarMensaje(aInf,robot2)
+    EnviarMensaje(aSup,robot2)
+    RefreshVars(aInf,aSup,id)
+    {robot 3}
+    EnviarMensaje(id,robot3)
+    EnviarMensaje(aInf,robot3)
+    EnviarMensaje(aSup,robot3)
+
+    repetir 3
+      RecibirMensaje(id,*)
+      RecibirMensaje(flores,*)
+      MaxFloresConID(id,idMax,flores,maxFlores)
+      total := total + flores
+    Informar(total)
+    Informar(idMax) {informa la ID del robot ganador}
+  fin
+variables 
+  robot1: tipo1
+  robot2: tipo1
+  robot3: tipo1
+  robot4: tipo2
+comenzar 
+  AsignarArea(robot1,areaR1)
+  AsignarArea(robot2,areaR2)
+  AsignarArea(robot3,areaR3)
+  AsignarArea(robot4,areaRF)
+  Iniciar(robot1, 2, 2)
+  Iniciar(robot2 ,8, 2)
+  Iniciar(robot3 ,14, 2)
+  Iniciar(robot4 ,1, 1)
+fin
