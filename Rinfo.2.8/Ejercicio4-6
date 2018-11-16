@@ -1,0 +1,41 @@
+programa ejercicio6
+areas 
+  areaR : AreaC(1,1,100,100) 
+robots 
+  robot tipo1 
+  variables 
+    cant,ave,cl:numero
+    ok:boolean 
+  comenzar 
+    cant:=0 
+    ave:= PosAv
+    cl:= PosCa
+    ok:=V
+    mientras(ok)
+      BloquearEsquina(10,10) 
+      Pos(10,10) 
+      si(HayFlorEnLaEsquina)
+        tomarFlor
+        cant:=cant+1
+      sino
+        ok:=F
+      Pos(ave,cl) 
+      LiberarEsquina(10,10) 
+    Informar(cant)
+  fin 
+variables 
+  r1,r2,r3,r4:tipo1 
+comenzar  
+  AsignarArea(r1,areaR) 
+  AsignarArea(r2,areaR)
+  AsignarArea(r3,areaR) 
+  AsignarArea(r4,areaR)
+  Iniciar(r1,9,9) 
+  Iniciar(r2,11,9)
+  Iniciar(r3,9,11) 
+  Iniciar(r4,11,11)
+fin 
+   
+     
+     
+      

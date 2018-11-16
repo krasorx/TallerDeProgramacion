@@ -1,0 +1,54 @@
+programa ejercicio2 
+procesos 
+  proceso juntarFloresPer(E a:numero; E b:numero; ES cant:numero) 
+  comenzar 
+    repetir 2 
+      repetir a 
+        mientras(HayFlorEnLaEsquina)
+          tomarFlor 
+          cant:= cant + 1 
+        mover 
+      derecha 
+      repetir b 
+        mientras(HayFlorEnLaEsquina)
+          tomarFlor 
+          cant:= cant + 1 
+        mover
+      derecha 
+  fin 
+areas 
+  areaR1 : AreaP(14,14,31,36) 
+  areaR2 : AreaP(39,39,56,61) 
+  areaR : AreaC(9,9,11,11) 
+robots 
+  robot tipo1 
+  variables 
+    cant,alt,base,cl,ave:numero 
+  comenzar 
+    cant:=0 
+    alt:=20 
+    base:=15
+    ave:= PosAv 
+    cl:= PosCa 
+    juntarFloresPer(alt,base,cant) 
+    BloquearEsquina(10,10) 
+    Pos(10,10) 
+    repetir cant 
+      depositarFlor 
+    Pos(ave,cl) 
+    LiberarEsquina(10,10) 
+  fin 
+variables 
+  r1,r2:tipo1 
+comenzar 
+  AsignarArea(r1,areaR1) 
+  AsignarArea(r2,areaR2) 
+  AsignarArea(r1,areaR) 
+  AsignarArea(r2,areaR) 
+  Iniciar(r1,15,15) 
+  Iniciar(r2,40,40) 
+fin 
+   
+     
+     
+      
