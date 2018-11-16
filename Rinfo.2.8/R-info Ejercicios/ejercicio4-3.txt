@@ -11,8 +11,6 @@ procesos
     repetir num
       depositarFlor
   fin
-
-
   proceso Rectangulo(ES alto:numero ; ES ancho : numero ; ES num:numero; ES avAnt:numero;ES caAnt:numero)
   variables
     caSig : numero
@@ -21,7 +19,7 @@ procesos
     repetir alto
       JuntarFlores(num)
       caSig := PosCa + 1
-      BloquearEsquina(caSig,avSig)
+      BloquearEsquina(PosAv,caSig)
       mover
       LiberarEsquina(avAnt,caAnt)
       avAnt := PosAv
@@ -29,7 +27,7 @@ procesos
     derecha
     repetir ancho
       avSig := PosAv + 1
-      BloquearEsquina(caSig,avSig)
+      BloquearEsquina(avSig,PosCa)
       mover
       LiberarEsquina(avAnt,caAnt)
       avAnt := PosAv
@@ -38,15 +36,15 @@ procesos
     repetir alto
       JuntarFlores(num)
       caSig := PosCa - 1
-      BloquearEsquina(caSig,avSig)
+      BloquearEsquina(PosAv,caSig)
       mover
       LiberarEsquina(avAnt,caAnt)
       avAnt := PosAv
       caAnt := PosCa
     derecha
     repetir ancho
-      avSig := PosCa - 1
-      BloquearEsquina(caSig,avSig)
+      avSig := PosAv - 1
+      BloquearEsquina(avSig,PosCa)
       mover
       LiberarEsquina(avAnt,caAnt)
       avAnt := PosAv
