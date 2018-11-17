@@ -1,3 +1,3 @@
 # TallerDeProgramacion
-Repositorio Taller de programacion unlp informatica, Grupo 39(o 37, no me acuerdo).
+Repositorio Taller de programacion unlp informatica, Grupo 39.
 modulo java : Hasta actividad 1.
