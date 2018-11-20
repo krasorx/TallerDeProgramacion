@@ -1,0 +1,127 @@
+programa Ejercicio4-3
+procesos
+  proceso JuntarFlores(ES num:numero)
+  comenzar
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+      num := num + 1
+  fin
+  proceso TirarFlores(ES num:numero)
+  comenzar
+    repetir num
+      depositarFlor
+      num := num - 1
+  fin
+  proceso Rectangulo(ES alto:numero ; ES ancho : numero ; ES num:numero; ES avAnt:numero;ES caAnt:numero)
+  variables
+    caSig : numero
+    avSig : numero
+  comenzar
+    repetir alto
+      JuntarFlores(num)
+      caSig := PosCa + 1
+      BloquearEsquina(PosAv,caSig)
+      mover
+      LiberarEsquina(avAnt,caAnt)
+      avAnt := PosAv
+      caAnt := PosCa
+    derecha
+    repetir ancho
+      avSig := PosAv + 1
+      BloquearEsquina(avSig,PosCa)
+      mover
+      LiberarEsquina(avAnt,caAnt)
+      avAnt := PosAv
+      caAnt := PosCa
+    derecha
+    repetir alto
+      JuntarFlores(num)
+      caSig := PosCa - 1
+      BloquearEsquina(PosAv,caSig)
+      mover
+      LiberarEsquina(avAnt,caAnt)
+      avAnt := PosAv
+      caAnt := PosCa
+    derecha
+    repetir ancho
+      avSig := PosAv - 1
+      BloquearEsquina(avSig,PosCa)
+      mover
+      LiberarEsquina(avAnt,caAnt)
+      avAnt := PosAv
+      caAnt := PosCa
+    derecha
+  fin 
+areas
+  AreaP1 : AreaP(1,1,1,1)
+  AreaC1 : AreaC(2,2,100,100)
+robots 
+  robot tipo1   {Robot recolector}
+  variables
+    calleOri: numero
+    aveOri: numero
+    ancho : numero
+    alto : numero
+    num : numero
+    caI : numero
+    avI : numero
+  comenzar
+    calleOri := PosCa
+    aveOri := PosAv
+    num := 0
+    caI := 0
+    avI := 0
+    RecibirMensaje(alto,robot3)
+    RecibirMensaje(ancho,robot3)
+    RecibirMensaje(avI,robot3)
+    RecibirMensaje(caI,robot3)
+    BloquearEsquina(avI,caI)
+    Pos(avI,caI)
+    Rectangulo(alto,ancho,num,avI,caI)
+    BloquearEsquina(10, 10)
+    Pos (10,10)
+    LiberarEsquina(avI,caI)
+    TirarFlores(num)
+    Pos(calleOri, aveOri)
+    LiberarEsquina(10,10)
+  fin
+  robot tipo2   {Robot JEFE}
+  variables
+    alto : numero
+    ancho : numero
+    avI : numero
+    caI : numero
+  comenzar
+    alto := 0
+    ancho := 0
+    avI := 0
+    caI := 0
+    Random(avI,1,50)
+    Random(caI,1,50)
+    Random(alto,1,50)
+    Random(ancho,1,50)
+    EnviarMensaje(alto,robot1)
+    EnviarMensaje(ancho,robot1)
+    EnviarMensaje(avI,robot1)
+    EnviarMensaje(caI,robot1)
+    Random(avI,1,50)
+    Random(caI,1,50)
+    Random(alto,1,50)
+    Random(ancho,1,50)
+    EnviarMensaje(alto,robot2)
+    EnviarMensaje(ancho,robot2)
+    EnviarMensaje(avI,robot2)
+    EnviarMensaje(caI,robot2) 
+  fin
+variables 
+  robot1: tipo1
+  robot2: tipo1
+  robot3: tipo2
+comenzar 
+  AsignarArea(robot1,AreaC1)
+  AsignarArea(robot2,AreaC1)
+  AsignarArea(robot3,AreaP1)
+  Iniciar(robot1, 2, 2)
+  Iniciar(robot2, 6, 6) 
+  Iniciar(robot3, 1, 1) 
+fin
