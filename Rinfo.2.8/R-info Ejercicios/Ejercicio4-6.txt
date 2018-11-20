@@ -1,0 +1,41 @@
+programa ejercicio4-6
+areas 
+  areaC1 : AreaC(9,9,11,11) 
+robots 
+  robot tipo1 
+  variables 
+    flores : numero
+    avOr : numero
+    caOr : numero
+    sigue : boolean
+  comenzar 
+    avOr := PosAv
+    caOr := PosCa
+    flores := 0
+    sigue := V
+    mientras(sigue)
+      BloquearEsquina(10,10)
+      Pos(10,10)
+      si(HayFlorEnLaEsquina)
+        tomarFlor
+        flores := flores + 1
+      sino 
+        sigue := F
+      Pos(avOr,caOr)
+      LiberarEsquina(10,10)
+    Informar(flores)
+  fin 
+variables 
+  r1,r2,r3,r4:tipo1 
+comenzar  
+  AsignarArea(r1,areaC1) 
+  AsignarArea(r2,areaC1) 
+  AsignarArea(r3,areaC1)  
+  AsignarArea(r4,areaC1) 
+  Iniciar(r1,9,9) 
+  Iniciar(r2,11,9)
+  Iniciar(r3,9,11) 
+  Iniciar(r4,11,11)
+fin 
+   
+     
