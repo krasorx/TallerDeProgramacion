@@ -9,13 +9,13 @@
         <Filename Value="MergeArbol.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="126"/>
-        <CursorPos X="38" Y="142"/>
+        <TopLine Value="184"/>
+        <CursorPos X="33" Y="200"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit0>
     </Units>
-    <JumpHistory Count="10" HistoryIndex="9">
+    <JumpHistory Count="22" HistoryIndex="21">
       <Position1>
         <Filename Value="MergeArbol.lpr"/>
         <Caret Line="92" Column="13" TopLine="61"/>
@@ -56,6 +56,54 @@
         <Filename Value="MergeArbol.lpr"/>
         <Caret Line="150" Column="28" TopLine="134"/>
       </Position10>
+      <Position11>
+        <Filename Value="MergeArbol.lpr"/>
+        <Caret Line="189" Column="25" TopLine="163"/>
+      </Position11>
+      <Position12>
+        <Filename Value="MergeArbol.lpr"/>
+        <Caret Line="168" Column="31" TopLine="152"/>
+      </Position12>
+      <Position13>
+        <Filename Value="MergeArbol.lpr"/>
+        <Caret Line="171" Column="6" TopLine="156"/>
+      </Position13>
+      <Position14>
+        <Filename Value="MergeArbol.lpr"/>
+        <Caret Line="179" Column="26" TopLine="162"/>
+      </Position14>
+      <Position15>
+        <Filename Value="MergeArbol.lpr"/>
+        <Caret Line="189" Column="32" TopLine="179"/>
+      </Position15>
+      <Position16>
+        <Filename Value="MergeArbol.lpr"/>
+        <Caret Line="207" Column="18" TopLine="189"/>
+      </Position16>
+      <Position17>
+        <Filename Value="MergeArbol.lpr"/>
+        <Caret Line="72" Column="11" TopLine="62"/>
+      </Position17>
+      <Position18>
+        <Filename Value="MergeArbol.lpr"/>
+        <Caret Line="212" Column="27" TopLine="189"/>
+      </Position18>
+      <Position19>
+        <Filename Value="MergeArbol.lpr"/>
+        <Caret Line="201" Column="9" TopLine="190"/>
+      </Position19>
+      <Position20>
+        <Filename Value="MergeArbol.lpr"/>
+        <Caret Line="163" Column="2" TopLine="147"/>
+      </Position20>
+      <Position21>
+        <Filename Value="MergeArbol.lpr"/>
+        <Caret Line="203" Column="39" TopLine="185"/>
+      </Position21>
+      <Position22>
+        <Filename Value="MergeArbol.lpr"/>
+        <Caret Line="200" Column="34" TopLine="184"/>
+      </Position22>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

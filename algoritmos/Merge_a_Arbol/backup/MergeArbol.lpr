@@ -194,16 +194,27 @@ begin
        end;
   end;
 end;
-
+procedure BuscarMax(arb : arbol;var max : integer; var codR : integer);
+begin
+  if (arb <> nil) then
+    if(arb^.datos.cantidadTot >= max ) then begin
+       max := arb^.datos.cantidadTot;
+       codR := arb^.datos.codRubro;
+       buscarMax(arb^.HI,max,codR);
+    end
+  else
+     max := -1;
+end;
 var
   vec : vectorListas;
   arb : arbol;
-  i,c,codR : integer;
+  i,max,codR : integer;
 begin
   InicializarVector(vec);
   CrearVectorListas(vec);
   c := 0;
   codR := 0;
+  max := -1;
   for i:= 1 to dimf do
     begin
       ImprimirLista(vec[i]);
@@ -211,17 +222,13 @@ begin
   MergeArbol(vec,arb);
   preOrden(arb);
   TextColor(25);
-  Informar(arb,c,codR);
-  writeLn('El codigo de rubro con mas productos vendidos es : ',c);
+  BuscarMax(arb,max,codR);
+  if(max > 0)then
+         writeLn('El codigo de rubro con mas productos vendidos es : ',codR);
+  else
+         writeLn('Error al hallar un producto mas vendido.');
   TextColor(24);
   writeLn('programa finalizado.');
-  sound(2500);
-  delay(500);
-  sound(3500);
-  delay(500);
-  sound(1500);
-  delay(500);
-  noSound();
   readKey();
 end.
 
