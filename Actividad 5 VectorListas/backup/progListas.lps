@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="progListas.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="56"/>
+        <CursorPos X="32" Y="70"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="5" HistoryIndex="4">
+      <Position1>
+        <Filename Value="progListas.lpr"/>
+        <Caret Line="78" Column="11" TopLine="61"/>
+      </Position1>
+      <Position2>
+        <Filename Value="progListas.lpr"/>
+        <Caret Line="16" TopLine="3"/>
+      </Position2>
+      <Position3>
+        <Filename Value="progListas.lpr"/>
+        <Caret Line="43" Column="41" TopLine="29"/>
+      </Position3>
+      <Position4>
+        <Filename Value="progListas.lpr"/>
+        <Caret Line="45" Column="31" TopLine="27"/>
+      </Position4>
+      <Position5>
+        <Filename Value="progListas.lpr"/>
+        <Caret Line="43" Column="44" TopLine="29"/>
+      </Position5>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
