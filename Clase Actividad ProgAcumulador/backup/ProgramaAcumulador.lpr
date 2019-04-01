@@ -85,38 +85,43 @@ begin
  l := nil;
  for i:= 1 to df do begin
      if(v[i]<>nil) then begin
-        if (v[i]^.datos.ISBN < min) then begin
+       if (v[i]^.datos.ISBN < min) then
+          begin
             min:= v[i]^.datos.ISBN;
             posMin := i;
-        end;
+          end;
      end;
  end;
  if(v[posMin] <> nil) then
     begin
-        l := v[posmin];
-        v[posMin]:=v[posMin]^.sig;
+       l := v[posmin];
+       v[posMin]:=v[posMin]^.sig;
     end;
 end;
 procedure Merge(var vector: vectorListas; var pri : lista );
 var
-   Plibro : lista;
-   ult : lista;
+  pConsumo : lista;
+  ant : consumo;
+  ult : lista;
 begin
- Plibro := nil;
+ pConsumo := nil;
  ult := nil;
- minimo(vector,Plibro);
- while(Plibro<>nil)do
+ minimo(vector,pConsumo);
+ ant := pConsumo^.datos;
+ while(pConsumo<>nil)do
    begin
-       AgregarAlFinal(pri,ult,Plibro^.datos);
-       Minimo(vector,Plibro);
+     while(pConsumo^.datos.tipoConsumo = ant);
+     AgregarAlFinal(pri,ult,Plibro^.datos);
+     Minimo(vector,Plibro);
    end;
 end;
 Procedure ImprimirLista ( pri : lista);
 Begin
- while (pri <> NIL) do begin
-   write (pri^.datos.cod,' | ') ;
-          pri:= pri^.sig;
- end;
+ while (pri <> NIL) do
+   begin
+       write (pri^.datos.cod,' | ') ;
+       pri:= pri^.sig;
+   end;
 end;
 procedure ImprimirVectorListas(Vec : vectorListas);
 var
@@ -154,6 +159,8 @@ begin
   writeLn('Imprimiendo Vector de listas...');
   ImprimirListas(vector);
   MergeAcumulador(vector,ln);
+  writeLn('Imprimiendo Lista Nueva ...');
   ImprimirLista(ln);
+  readKey();
 end.
 
