@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="programaAcumulador.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="92"/>
+        <CursorPos X="8" Y="97"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="27" HistoryIndex="26">
+      <Position1>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="138" Column="11" TopLine="125"/>
+      </Position1>
+      <Position2>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="26" Column="30"/>
+      </Position2>
+      <Position3>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="32" Column="19" TopLine="20"/>
+      </Position3>
+      <Position4>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="37" Column="15" TopLine="31"/>
+      </Position4>
+      <Position5>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="43" Column="33" TopLine="30"/>
+      </Position5>
+      <Position6>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="82" Column="6" TopLine="68"/>
+      </Position6>
+      <Position7>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="136" Column="22" TopLine="122"/>
+      </Position7>
+      <Position8>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="135" Column="29" TopLine="122"/>
+      </Position8>
+      <Position9>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="66" Column="11" TopLine="52"/>
+      </Position9>
+      <Position10>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="83" Column="24" TopLine="69"/>
+      </Position10>
+      <Position11>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="69" Column="36" TopLine="52"/>
+      </Position11>
+      <Position12>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="83" Column="24" TopLine="69"/>
+      </Position12>
+      <Position13>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="66" Column="35" TopLine="59"/>
+      </Position13>
+      <Position14>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="130" Column="59" TopLine="125"/>
+      </Position14>
+      <Position15>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="147" Column="15" TopLine="136"/>
+      </Position15>
+      <Position16>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="169" Column="21" TopLine="154"/>
+      </Position16>
+      <Position17>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="168" Column="42" TopLine="163"/>
+      </Position17>
+      <Position18>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="185" Column="3" TopLine="163"/>
+      </Position18>
+      <Position19>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="186" Column="8" TopLine="163"/>
+      </Position19>
+      <Position20>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="188" Column="21" TopLine="163"/>
+      </Position20>
+      <Position21>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="104" Column="22" TopLine="91"/>
+      </Position21>
+      <Position22>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="111" Column="33" TopLine="91"/>
+      </Position22>
+      <Position23>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="83" Column="23" TopLine="64"/>
+      </Position23>
+      <Position24>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="147" Column="86" TopLine="133"/>
+      </Position24>
+      <Position25>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="84" Column="28" TopLine="69"/>
+      </Position25>
+      <Position26>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="118" Column="18" TopLine="100"/>
+      </Position26>
+      <Position27>
+        <Filename Value="programaAcumulador.lpr"/>
+        <Caret Line="107" Column="13" TopLine="100"/>
+      </Position27>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
