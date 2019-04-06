@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="Busqueda_Dicotomica.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="52"/>
+        <CursorPos X="25" Y="67"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="2" HistoryIndex="1">
+      <Position1>
+        <Filename Value="Busqueda_Dicotomica.pas"/>
+        <Caret Line="91" Column="20" TopLine="63"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Busqueda_Dicotomica.pas"/>
+        <Caret Line="66" Column="19" TopLine="51"/>
+      </Position2>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
