@@ -10,13 +10,13 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="programaAcumulador"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="90"/>
-        <CursorPos X="37" Y="105"/>
-        <UsageCount Value="34"/>
+        <TopLine Value="101"/>
+        <CursorPos X="25" Y="122"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit0>
     </Units>
-    <JumpHistory Count="14" HistoryIndex="13">
+    <JumpHistory Count="11" HistoryIndex="10">
       <Position1>
         <Filename Value="ProgramaAcumulador.lpr"/>
         <Caret Line="146" Column="23" TopLine="123"/>
@@ -61,18 +61,6 @@
         <Filename Value="ProgramaAcumulador.lpr"/>
         <Caret Line="109" Column="55" TopLine="96"/>
       </Position11>
-      <Position12>
-        <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="140" Column="26" TopLine="111"/>
-      </Position12>
-      <Position13>
-        <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="96" Column="21" TopLine="80"/>
-      </Position13>
-      <Position14>
-        <Filename Value="ProgramaAcumulador.lpr"/>
-        <Caret Line="121" Column="6" TopLine="117"/>
-      </Position14>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
