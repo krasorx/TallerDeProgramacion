@@ -35,7 +35,7 @@ begin
        write('Ingresar la cantidad deseada de elementos en la lista : ');
        readLn(ziEndo);
      until (ziEndo > 0);
-     for i:= 1 to ziEndo+1 do begin
+     for i:= 1 to ziEndo do begin
        n := random(100);
        CrearListaAgregarAdelante (l,n);
      end;
@@ -56,6 +56,24 @@ begin
       if (d < a^.dato) then         // Si el dato es menor al dato en arbol
          InsertarArbol(a^.HI,d)       // lo inserta en el hijo izquierdo
       else                            // si el dato es mayor al dato en arbol
+         InsertarArbol(a^.HD,d);  // lo inserta en el hijo derecho
+end;
+procedure InsertarArbolSinRepetir(var a : arbol ;var d : integer);
+var
+   aux : arbol;
+begin
+  if (a = NIL) then begin
+    new (aux);
+    aux^.dato := d;
+    aux^.HI := NIL;
+    aux^.HD := NIL;
+    a := aux;
+  end
+  else
+      if (d < a^.dato) then         // Si el dato es menor al dato en arbol
+         InsertarArbol(a^.HI,d)       // lo inserta en el hijo izquierdo
+      else
+         if (d > a^.dato) then        // si el dato es mayor al dato en arbol
          InsertarArbol(a^.HD,d);  // lo inserta en el hijo derecho
 end;
 procedure ArmarArbolito(var l : lista; var arb : arbol );
@@ -110,7 +128,7 @@ begin
                while (l<> nil) do begin
                   nivel := nivel + 1;
                   cant:= contarElementos(l);
-                  write ('Nivel ', nivel, ': ');
+                  write ('Nivel ', nivel, ': ',' ':(15 - nivel));
                   for i:= 1 to cant do begin
                     write (l^.info^.dato, ' - ');
                     if (l^.info^.HI <> nil) then agregarAtras (l,ult,l^.info^.HI);
@@ -126,11 +144,10 @@ end;
 Procedure ImprimirListaEnOrdenInverso ( pri : lista);
 Begin
  if (pri <> NIL) then begin
-   pri := pri^.sig;
-   ImprimirListaEnOrdenInverso(pri);
+   ImprimirListaEnOrdenInverso(pri^.sig);
    if (pri <> NIL) then write ('|',pri^.datos,'|') ;
  end;
-end;
+end; 
 var
   pri : lista;
   arb : arbol;
@@ -143,7 +160,6 @@ begin
   ImprimirListaEnOrdenInverso(pri);
   writeLn();
   ArmarArbolito(pri,arb);
-//  writeLn(arb^.dato);
   ImprimirPorNivel(arb);
   readKey();
 end.

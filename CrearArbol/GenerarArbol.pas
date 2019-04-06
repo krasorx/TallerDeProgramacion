@@ -55,7 +55,25 @@ begin
   else
       if (d < a^.dato) then         // Si el dato es menor al dato en arbol
          InsertarArbol(a^.HI,d)       // lo inserta en el hijo izquierdo
-      else                            // si el dato es mayor al dato en arbol
+      else                            // si el dato es mayor  o igual al dato en arbol
+         InsertarArbol(a^.HD,d);  // lo inserta en el hijo derecho
+end;
+procedure InsertarArbolSinRepetir(var a : arbol ;var d : integer);
+var
+   aux : arbol;
+begin
+  if (a = NIL) then begin
+    new (aux);
+    aux^.dato := d;
+    aux^.HI := NIL;
+    aux^.HD := NIL;
+    a := aux;
+  end
+  else
+      if (d < a^.dato) then         // Si el dato es menor al dato en arbol
+         InsertarArbol(a^.HI,d)       // lo inserta en el hijo izquierdo
+      else
+         if (d > a^.dato) then        // si el dato es mayor al dato en arbol
          InsertarArbol(a^.HD,d);  // lo inserta en el hijo derecho
 end;
 procedure ArmarArbolito(var l : lista; var arb : arbol );
