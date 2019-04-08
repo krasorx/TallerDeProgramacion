@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="88"/>
+        <CursorPos X="40" Y="99"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="9" HistoryIndex="8">
+      <Position1>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="114" Column="28" TopLine="88"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="66" Column="54" TopLine="52"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="96" Column="50" TopLine="83"/>
+      </Position3>
+      <Position4>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="100" Column="13" TopLine="82"/>
+      </Position4>
+      <Position5>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="107" Column="73" TopLine="84"/>
+      </Position5>
+      <Position6>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="114" Column="4" TopLine="97"/>
+      </Position6>
+      <Position7>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="73" Column="23" TopLine="50"/>
+      </Position7>
+      <Position8>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="60" Column="21" TopLine="50"/>
+      </Position8>
+      <Position9>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="57" Column="3" TopLine="50"/>
+      </Position9>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
