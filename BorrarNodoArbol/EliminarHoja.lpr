@@ -86,7 +86,7 @@ begin
   else
      min := -1;
 end;
-procedure DeleteThis(var a : arbol; v:integer; var loEncontro : boolean);
+procedure DeleteThis(var a : arbol; v:integer; var loEncontro : boolean; var ant:arbol);
 var
   min : integer;
 begin
@@ -96,24 +96,20 @@ begin
   else
      begin
         if (a^.dato > v)then
-          DeleteThis(a^.HI,v,loEncontro)
+          DeleteThis(a^.HI,v,loEncontro,a)
           else
              if (a^.dato < v)then
-               DeleteThis(a^.HD,v,loEncontro)
+               DeleteThis(a^.HD,v,loEncontro,a)
                else  begin
                   loEncontro := true;
                   if( (a^.HI = NIL) AND (a^.HD <> NIL) )then begin
                     loEncontro := true;
-                    //BuscarMin(a^.HD, min);
                     a := a^.HD;
-                    DeleteThis(a^.HD,min,loEncontro);
                     end
                     else
                        if( (a^.HD = NIL) AND (a^.HI <> NIL) ) then   begin
                          loEncontro := true;
-                         //BuscarMin(a^.HD, min);
                          a := a^.HI;
-                         DeleteThis(a^.HD,min,loEncontro);
                          end
                          else
                             if ( (a^.HD <> NIL) AND (a^.HI <> NIL) )then     //funca
@@ -121,7 +117,8 @@ begin
                                  loEncontro := true;
                                  BuscarMin(a^.HD, min);
                                  a^.dato:= min;
-                                 DeleteThis(a^.HD,min,loEncontro);
+                                 DeleteThis(a^.HD,min,loEncontro,a);
+                                 Dispose(a);
                               end
                          else
                              if( (a^.HD = NIL) AND (a^.HI = NIL) )then
@@ -152,12 +149,13 @@ Begin
 end;
 var
   pri : lista;
-  arb,punteroAnodo : arbol;
+  arb,ant,punteroAnodo : arbol;
   valor,min : integer;
   loEncontro : boolean;
 begin
   randomize;
   arb := NIL;
+  ant := NIL;
   pri := NIL;
   loEncontro := true;
   min := MAXINT;
@@ -169,7 +167,7 @@ begin
   ArmarArbolito(pri,arb);
   write('Ingresar el valor a eliminar : ');
   readLn(valor);
-  DeleteThis(arb,valor,loEncontro);
+  DeleteThis(arb,valor,loEncontro,ant);
   if (loEncontro)then
     writeLn(' Eliminado ')
     else
