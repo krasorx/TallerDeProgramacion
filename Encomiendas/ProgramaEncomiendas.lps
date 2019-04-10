@@ -9,13 +9,13 @@
         <Filename Value="ProgramaEncomiendas.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="88"/>
-        <CursorPos X="40" Y="99"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="72"/>
+        <CursorPos X="35" Y="86"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit0>
     </Units>
-    <JumpHistory Count="9" HistoryIndex="8">
+    <JumpHistory Count="19" HistoryIndex="18">
       <Position1>
         <Filename Value="ProgramaEncomiendas.lpr"/>
         <Caret Line="114" Column="28" TopLine="88"/>
@@ -52,6 +52,46 @@
         <Filename Value="ProgramaEncomiendas.lpr"/>
         <Caret Line="57" Column="3" TopLine="50"/>
       </Position9>
+      <Position10>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="79" Column="20" TopLine="62"/>
+      </Position10>
+      <Position11>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="66" Column="17" TopLine="55"/>
+      </Position11>
+      <Position12>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="67" Column="16" TopLine="52"/>
+      </Position12>
+      <Position13>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="66" Column="15" TopLine="52"/>
+      </Position13>
+      <Position14>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="85" Column="32" TopLine="58"/>
+      </Position14>
+      <Position15>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="86" Column="32" TopLine="62"/>
+      </Position15>
+      <Position16>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="97" Column="38" TopLine="79"/>
+      </Position16>
+      <Position17>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="61" Column="4" TopLine="54"/>
+      </Position17>
+      <Position18>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="85" Column="18" TopLine="67"/>
+      </Position18>
+      <Position19>
+        <Filename Value="ProgramaEncomiendas.lpr"/>
+        <Caret Line="86" Column="29" TopLine="62"/>
+      </Position19>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

@@ -55,40 +55,45 @@ begin
    agregarAdelante(L, e);
  End;
 end;
-procedure InsertarArbol(var a : arbol ;le : lista);
+procedure InsertarArbol(var a : arbol ;e : encomienda;var ln : lista);        //Habria que pasarle una encomienda y crear una lista
 var
    aux : arbol;
-   ln : lista;
+   //ln : lista;
 begin
-  ln := nil;
   if (a = NIL) then begin
-    ln := le;
-    ln^.sig:= NIL;
+    ln := nil;
+    AgregarAdelante(ln,e);
     new (aux);
-    aux^.dato := ln;        //le = listaEncomienda
+    aux^.dato := ln;
 
     aux^.HI := NIL;
     aux^.HD := NIL;
     a := aux;
   end
   else
-      if (le^.dato.peso < a^.dato^.dato.peso) then         // Si el dato es menor al dato en arbol
-         InsertarArbol(a^.HI,ln)       // lo inserta en el hijo izquierdo
-      else if(le^.dato.peso > a^.dato^.dato.peso)then
-         InsertarArbol(a^.HD,ln);  // lo inserta en el hijo derecho
-  if(le^.dato.peso = a^.dato^.dato.peso)then
+      if (e.peso < a^.dato^.dato.peso) then begin
+
+         InsertarArbol(a^.HI,e,ln);
+
+      end
+      else if(e.peso > a^.dato^.dato.peso)then    begin
+
+         InsertarArbol(a^.HD,e,ln);
+
+      end;
+  if(e.peso = a^.dato^.dato.peso)then
        begin
-           AgregarAdelante(ln,ln^.dato);
-           le := le^.sig;
+           AgregarAdelante(a,e);
        end;
 end;
 procedure ArmarArbolito(var l : lista; var arb : arbol );
 var
-  aux : lista;
+  aux,ln : lista;
 begin
   aux := l;
+  ln := nil;
   while (aux <> NIL) do begin
-          InsertarArbol(arb,aux);
+          InsertarArbol(arb,aux^.dato,ln);
           aux:= aux^.sig;
   end;
 end;
