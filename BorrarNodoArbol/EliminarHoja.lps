@@ -9,13 +9,13 @@
         <Filename Value="EliminarHoja.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="103"/>
-        <CursorPos X="2" Y="122"/>
+        <TopLine Value="117"/>
+        <CursorPos X="34" Y="131"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit0>
     </Units>
-    <JumpHistory Count="6" HistoryIndex="5">
+    <JumpHistory Count="11" HistoryIndex="10">
       <Position1>
         <Filename Value="EliminarHoja.lpr"/>
         <Caret Line="151" Column="47" TopLine="125"/>
@@ -40,6 +40,26 @@
         <Filename Value="EliminarHoja.lpr"/>
         <Caret Line="127" Column="48" TopLine="106"/>
       </Position6>
+      <Position7>
+        <Filename Value="EliminarHoja.lpr"/>
+        <Caret Line="120" Column="40" TopLine="103"/>
+      </Position7>
+      <Position8>
+        <Filename Value="EliminarHoja.lpr"/>
+        <Caret Line="37" Column="47" TopLine="15"/>
+      </Position8>
+      <Position9>
+        <Filename Value="EliminarHoja.lpr"/>
+        <Caret Line="130" Column="46" TopLine="109"/>
+      </Position9>
+      <Position10>
+        <Filename Value="EliminarHoja.lpr"/>
+        <Caret Line="124" Column="36" TopLine="110"/>
+      </Position10>
+      <Position11>
+        <Filename Value="EliminarHoja.lpr"/>
+        <Caret Line="132" Column="46" TopLine="110"/>
+      </Position11>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

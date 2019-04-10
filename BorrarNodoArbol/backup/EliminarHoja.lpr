@@ -30,7 +30,8 @@ begin
        readLn(ziEndo);
      until (ziEndo > 0);
      for i:= 1 to ziEndo do begin
-       n := random(100);
+       //n := random(100);
+             readln(n);
        CrearListaAgregarAdelante(l,n);
        //CrearListaAgregarAdelante (l,n);
      end;
@@ -105,11 +106,13 @@ begin
                   if( (a^.HI = NIL) AND (a^.HD <> NIL) )then begin
                     loEncontro := true;
                     a := a^.HD;
+                    dispose(ant);
                     end
                     else
                        if( (a^.HD = NIL) AND (a^.HI <> NIL) ) then   begin
                          loEncontro := true;
                          a := a^.HI;
+                         Dispose(ant);
                          end
                          else
                             if ( (a^.HD <> NIL) AND (a^.HI <> NIL) )then     //funca
@@ -118,15 +121,15 @@ begin
                                  BuscarMin(a^.HD, min);
                                  a^.dato:= min;
                                  DeleteThis(a^.HD,min,loEncontro,a);
-                                 Dispose(a);
-                                 a := nil;
+                                 Dispose(ant);
                               end
                          else
                              if( (a^.HD = NIL) AND (a^.HI = NIL) )then
                                begin
                                   loEncontro := true;
-                                  Dispose(a);
-                                  a := nil;
+                                  Dispose(ant);
+                                  a^.HI := nil;
+                                  a^.HD:= nil;
 
                                end;
                end;
