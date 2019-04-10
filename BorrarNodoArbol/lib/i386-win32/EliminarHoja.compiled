@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\FPC\2.6.4\bin\i386-Win32\fpc.exe" Date="1147568783"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -l -vewnhibq -FiC:\Users\Alumno\Documents\BorrarNodoArbol\lib\i386-win32 -FuC:\Users\Alumno\Documents\BorrarNodoArbol\ -FUC:\Users\Alumno\Documents\BorrarNodoArbol\lib\i386-win32\ -FEC:\Users\Alumno\Documents\BorrarNodoArbol\ -oC:\Users\Alumno\Documents\BorrarNodoArbol\EliminarHoja.exe EliminarHoja.lpr"/>
+</CONFIG>
