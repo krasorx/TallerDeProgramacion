@@ -105,14 +105,14 @@ begin
                   loEncontro := true;
                   if( (a^.HI = NIL) AND (a^.HD <> NIL) )then begin
                     loEncontro := true;
-                    a := a^.HD;
-                    dispose(ant);
+                    ant^.HD:= a^.HD;           // Hijo der del ant pasa a ser el hijo der de a
+                    //dispose(a);
                     end
                     else
                        if( (a^.HD = NIL) AND (a^.HI <> NIL) ) then   begin
                          loEncontro := true;
-                         a := a^.HI;
-                         Dispose(ant);
+                         ant^.HI:= a^.HI;
+                         //Dispose(a);
                          end
                          else
                             if ( (a^.HD <> NIL) AND (a^.HI <> NIL) )then     //funca
@@ -121,15 +121,15 @@ begin
                                  BuscarMin(a^.HD, min);
                                  a^.dato:= min;
                                  DeleteThis(a^.HD,min,loEncontro,a);
-                                 Dispose(ant);
+                                 //ant^.HD:= a^.HD;
                               end
                          else
                              if( (a^.HD = NIL) AND (a^.HI = NIL) )then
                                begin
                                   loEncontro := true;
-                                  Dispose(ant);
-
-
+                                  ant^.HD:= nil;
+                                  ant^.HI:= nil;
+                                  Dispose(a);
                                end;
                end;
      end;
