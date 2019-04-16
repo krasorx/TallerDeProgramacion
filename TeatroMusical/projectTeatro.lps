@@ -9,11 +9,41 @@
         <Filename Value="projectTeatro.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos X="21" Y="8"/>
+        <TopLine Value="114"/>
+        <CursorPos X="72" Y="130"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit0>
     </Units>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory Count="7" HistoryIndex="6">
+      <Position1>
+        <Filename Value="projectTeatro.lpr"/>
+        <Caret Line="135" Column="41" TopLine="111"/>
+      </Position1>
+      <Position2>
+        <Filename Value="projectTeatro.lpr"/>
+        <Caret Line="109" Column="5" TopLine="88"/>
+      </Position2>
+      <Position3>
+        <Filename Value="projectTeatro.lpr"/>
+        <Caret Line="95" Column="39" TopLine="79"/>
+      </Position3>
+      <Position4>
+        <Filename Value="projectTeatro.lpr"/>
+        <Caret Line="86" Column="23" TopLine="78"/>
+      </Position4>
+      <Position5>
+        <Filename Value="projectTeatro.lpr"/>
+        <Caret Line="174" Column="15" TopLine="147"/>
+      </Position5>
+      <Position6>
+        <Filename Value="projectTeatro.lpr"/>
+        <Caret Line="132" Column="61" TopLine="117"/>
+      </Position6>
+      <Position7>
+        <Filename Value="projectTeatro.lpr"/>
+        <Caret Line="150" Column="81" TopLine="130"/>
+      </Position7>
+    </JumpHistory>
   </ProjectSession>
 </CONFIG>

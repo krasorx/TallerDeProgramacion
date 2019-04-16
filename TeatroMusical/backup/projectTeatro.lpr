@@ -127,9 +127,27 @@ Procedure ImprimirLista ( pri : lista);
 
 Begin
  while (pri <> NIL) do begin
-   writeLn(pri^.datos.nombreBanda,' : ',pri^.datos.anyo,' entradas : ' pri^.datos.entradasVendidas,'.') ;
+   writeLn(pri^.datos.nombreBanda,' : ',pri^.datos.anyo,' entradas : ', pri^.datos.entradasVendidas,'.') ;
    pri:= pri^.sig
  end;
+end;
+Procedure ImprimirListaCompleta ( pri : lista);
+var
+  dur,c : integer;
+  tP : real;
+Begin
+ dur := 0;
+ c := 0;
+ if(pri <> NIL) then
+      write(pri^.datos.anyo,' : ');
+ while (pri <> NIL) do begin
+   writeLn(pri^.datos.nombreBanda,' entradas : ', pri^.datos.entradasVendidas,'.') ;
+   dur := dur + pri^.datos.duracion ;
+   pri:= pri^.sig;
+   c := c + 1;
+ end;
+ tP := (dur / c);
+ writeLn('Duracion promedio de los conciertos de', pri^.datos.anyo ,' : ',tP:4:2);
 end;
 procedure RecorridoAcotado(arb: arbol; inf: integer; sup: integer);
 begin
@@ -137,7 +155,6 @@ begin
     if (arb^.dato^.datos.anyo >= inf) then
        if (arb^.dato^.datos.anyo <=sup) then begin
          ImprimirLista(arb^.dato);
-         //writeLn(arb^.dato^.datos.nombreBanda,' : ',arb^.dato^.datos.anyo, arb^.dato^.datos.entradasVendidas,'.');
          recorridoAcotado(arb^.HI, inf, sup);
          recorridoAcotado(arb^.HD, inf, sup);
          end
@@ -148,10 +165,10 @@ begin
 function BuscarRamita(arb : arbol; valor:integer):arbol;
 begin
   if (arb <> nil) then
-    if(arb^.dato = valor) then
+    if(arb^.dato^.datos.anyo = valor) then
        BuscarRamita:= arb
     else
-        if (arb^.dato > valor) then
+        if (arb^.dato^.datos.anyo > valor) then
              BuscarRamita := BuscarRamita(arb^.HI, valor)
           else
              BuscarRamita := BuscarRamita(arb^.HD, valor)
@@ -172,14 +189,15 @@ end;
 procedure InformarRecitales(arb : arbol);
 var
   a, b : integer;
+  l : lista;
 begin
  writeLn('Ingresar dos anyos del que desea obtener todos los recitales habidos : ');
  write('Anyo : ');
  readLn(a);
  write('Anyo : ');
  readLn(b);
- ImprimirLista(BuscarRamita^.dato,a);
- ImprimirLista(BuscarRamita^.dato,b);
+ ImprimirLista( (BuscarRamita(arb,a) )^.dato);
+ ImprimirLista( (BuscarRamita(arb,b) )^.dato);
 end;
 
 var
@@ -193,6 +211,7 @@ begin
   writeLn('Cargar Lista de recitales.');
   CargarRecitales(lst);
   ImprimirListaEnOrdenInverso(lst);
+  writeLn();
   ArmarArbolito(lst,arb);
   TextColor(27);
   ImprimirRecitalesEntre(arb);
