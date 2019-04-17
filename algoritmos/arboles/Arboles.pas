@@ -50,6 +50,56 @@ begin
   else
      max := -1;
 end;
+procedure minimo(var v:vectorListas;var monto : real ; var min : integer);
+var
+   i,cont :integer;
+   posmin : integer;
+begin
+ min:=999;
+ posmin := 1;
+ monto := 0;
+ for i:= 1 to df do
+   begin
+     if(v[i] <> nil) then
+     begin
+       if(v[i]^.datos.tipoConsumo <= min)then
+       begin
+         min := v[i]^.datos.tipoConsumo;
+         posMin := i;
+       end;
+     end;
+   end;
+ if(v[posMin] <> nil)then
+ begin
+   monto := v[posmin]^.datos.monto;
+   v[posMin] := v[posMin]^.sig;
+ end;
+end; 
+procedure Merge(var vector: vectorListas; var pri : listaN );
+var
+  act,min : integer;
+  c2 : consumo2;
+  ult : listaN;
+  monto,tot : real;
+begin
+ pri:= nil;
+ ult := nil;
+ Minimo(vector,monto,min);
+ while(min <> 999) do
+   begin
+     tot := 0;
+     act := min;
+     c2.tipoConsumo:= min;
+     while ( (min = act) ) do
+       begin
+         tot := tot + monto;
+         Minimo(vector,monto,min);
+       end;
+     C2.monto:= tot;
+     AgregarAlFinal(pri,ult,c2);
+     // minimo();
+   end;
+end;          
 procedure DeterminarMinimo(var v: vectorListas; var posmin:integer;var min : integer;
                                var cantVentas:integer;var codR : integer);
 var
