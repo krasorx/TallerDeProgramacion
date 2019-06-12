@@ -7,7 +7,7 @@ procesos
   fin 
   proceso Recorrido
   comenzar
-    repetir 20
+    repetir 10
       repetir 20
         JuntarFlores
         mover
@@ -22,22 +22,29 @@ procesos
       repetir 3 
         derecha
       mover
+      repetir 3
+        derecha
 
   fin
 areas
-  area1 : AreaPC(10,5,30,30)
+  area1 : AreaPC(10,10,30,30)
   area2 : AreaP(35,35,55,55)
-  area3 : AreaC(10,10,10,10)
+  area3 : AreaC(82,82,82,82)
 robots 
   robot tipo1
+  variables
+    avI : numero
+    caI : numero
   comenzar
+    avI := PosAv
+    caI := PosCa
     Recorrido
-    BloquearEsquina(10,10)
-    Pos (10,10)
+    BloquearEsquina(82,82)
+    Pos (82,82)
     mientras(HayFlorEnLaBolsa)
       depositarFlor
-    Pos(10,5)
-    LiberarEsquina(10,10)
+    Pos(avI,caI)
+    LiberarEsquina(82,82)
   fin
 
 variables 
@@ -48,7 +55,7 @@ comenzar
   AsignarArea(robot1,area1)
   AsignarArea(robot2,area2)
   AsignarArea(robot2,area3)
-
-  Iniciar(robot1, 10, 5)
+  AsignarArea(robot1,area3)
+  Iniciar(robot1, 10, 10)
   Iniciar(robot2, 35, 35) 
 fin
