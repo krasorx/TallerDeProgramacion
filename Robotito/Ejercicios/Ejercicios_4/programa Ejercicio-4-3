@@ -1,0 +1,117 @@
+programa Ejercicio-4-3
+procesos
+  proceso JuntarFlores (ES flor:numero)
+  comenzar
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor
+      flor:= flor + 1
+  fin 
+  proceso Rectangulo(E alto:numero ; E largo:numero; ES flores:numero)
+  comenzar
+    repetir 2
+      repetir alto
+        JuntarFlores(flores)
+        mover
+      derecha
+      repetir largo
+        JuntarFlores(flores)
+        mover
+      derecha
+  fin
+areas
+  ciudad : AreaC(1,1,100,100)
+robots 
+  robot tipo1
+  variables
+    f : numero
+    id : numero
+  comenzar
+    f := 0
+    RecibirMensaje(id,robot7)
+    Rectangulo(5,3,f)
+    EnviarMensaje(id,robot7)
+    EnviarMensaje(f,robot7)
+  fin
+  robot jefe
+  variables
+    f: numero
+    aux: numero 
+    max : numero
+    id: numero
+    idMax: numero
+  comenzar
+    aux := 0
+    max := 0
+    EnviarMensaje(1,robot1)
+    EnviarMensaje(2,robot2)
+    EnviarMensaje(3,robot3)
+    EnviarMensaje(4,robot4)
+    EnviarMensaje(5,robot5)
+    EnviarMensaje(6,robot6)
+    repetir 6
+      RecibirMensaje(id,*)
+
+      si(id = 1)
+        RecibirMensaje(f,robot1)
+        si(f > max)
+          max := f
+          idMax := id
+      sino
+        si(id = 2)
+          RecibirMensaje(f,robot2)
+          si(f > max)
+            max := f
+            idMax := id
+        sino
+          si(id = 3)
+            RecibirMensaje(f,robot3)
+            si(f > max)
+              max := f
+              idMax := id
+          sino
+            si(id = 4)
+              RecibirMensaje(f,robot4)
+              si(f > max)
+                max := f
+                idMax := id
+            sino
+              si(id = 5)
+                RecibirMensaje(f,robot5)
+                si(f > max)
+                  max := f
+                  idMax := id
+              sino
+                si(id = 6)
+                  RecibirMensaje(f,robot6)
+                  si(f > max)
+                    max := f
+                    idMax := id
+     
+    Informar(idMax)
+    Informar(max)
+  fin
+     
+variables 
+  robot1: tipo1
+  robot2: tipo1 
+  robot3: tipo1
+  robot4: tipo1
+  robot5: tipo1 
+  robot6: tipo1
+  robot7: jefe
+comenzar 
+  AsignarArea(robot1,ciudad)
+  AsignarArea(robot2,ciudad)
+  AsignarArea(robot3,ciudad)
+  AsignarArea(robot4,ciudad)
+  AsignarArea(robot5,ciudad)
+  AsignarArea(robot6,ciudad)
+  AsignarArea(robot7,ciudad)
+  Iniciar(robot1, 2, 2)
+  Iniciar(robot2, 6, 2 ) 
+  Iniciar(robot3, 10, 2)
+  Iniciar(robot4, 14, 2 ) 
+  Iniciar(robot5, 18, 2)
+  Iniciar(robot6, 22, 2 )
+  Iniciar(robot7, 1, 1) 
+fin
