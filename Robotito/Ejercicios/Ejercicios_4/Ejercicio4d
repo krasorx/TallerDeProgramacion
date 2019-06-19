@@ -1,0 +1,62 @@
+programa Mensaje 
+procesos 
+  proceso juntarFlores (ES f:numero)
+  comenzar
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor
+      f:= f + 1
+  fin
+      
+areas
+  ciudad : AreaC(1,1,100,100)
+  
+robots 
+  robot tipo1
+  variables
+    f1:numero
+  comenzar
+    f1:=0
+    repetir 75
+      juntarFlores (f1)
+      mover
+    derecha
+    repetir 30
+      mover  
+    EnviarMensaje(f1,robot3)
+  fin
+  
+  robot tipo2
+  variables
+    f2 : numero
+  comenzar
+    f2:=0
+    repetir 2
+      mover
+      juntarFlores (f2)
+    EnviarMensaje(f2,robot3)
+  fin   
+
+  robot tipo3
+  variables
+    tot,aux : numero
+  comenzar
+    tot:=0
+    RecibirMensaje(aux,robot1)
+    tot:= tot + aux
+    RecibirMensaje(aux,robot2)
+    tot:= tot + aux
+    Informar (tot)
+  fin   
+
+variables 
+  robot1: tipo1
+  robot2: tipo2
+  robot3: tipo3 
+comenzar 
+  AsignarArea(robot1,ciudad)
+  AsignarArea(robot2,ciudad)
+  AsignarArea(robot3,ciudad)
+  Iniciar(robot1, 10, 10)
+  Iniciar(robot2, 1, 1)
+  Iniciar(robot3, 15, 15)   
+fin 
