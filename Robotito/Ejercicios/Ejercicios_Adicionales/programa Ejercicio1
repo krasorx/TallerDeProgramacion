@@ -1,0 +1,228 @@
+programa Ejercicio1
+procesos
+  proceso JuntarFlores(E id : numero)
+  comenzar
+    mientras (HayFlorEnLaEsquina)
+      si(HayFlorEnLaEsquina)
+        tomarFlor
+        EnviarMensaje(id,robot5)
+        EnviarMensaje(1,robot5)
+      sino
+        EnviarMensaje(id,robot5)
+        EnviarMensaje(0,robot5)
+  fin 
+  proceso JuntarPapeles(E id : numero)
+  comenzar
+    mientras (HayPapelEnLaEsquina)
+      si(HayPapelEnLaEsquina) 
+        tomarPapel
+        EnviarMensaje(id,robot5)
+        EnviarMensaje(2,robot5)
+      sino
+        EnviarMensaje(id,robot5)
+        EnviarMensaje(3,robot5)
+  fin 
+  proceso HacerAlgo(E id : numero)
+  comenzar
+    JuntarPapeles(id)
+    JuntarFlores(id)
+  fin 
+  proceso DepositarTodo
+  comenzar
+    mientras(HayPapelEnLaBolsa)
+      depositarPapel
+    mientras(HayFlorEnLaBolsa)
+      depositarFlor
+  fin
+
+areas
+  areaComun: AreaC(45,48,62,69)
+  areaEspera: AreaC(10,10,13,10)
+  areaJefe: AreaP(1,1,1,1)
+robots 
+  robot recolector
+  variables
+    avI : numero
+    caI : numero
+    av : numero
+    ca : numero
+    c : numero
+    cod : numero
+    id : numero
+  comenzar
+    avI := PosAv()
+    caI := PosCa()
+    c := 0
+    cod := 0
+    RecibirMensaje(id,robot5)
+
+    mientras(c < 5)
+      Random(av,45,62)
+      Random(ca,48,69)
+      BloquearEsquina(av,ca)
+      Pos (av,ca)
+      HacerAlgo(id)
+      Pos(avI,caI)
+      LiberarEsquina(av,ca)
+      c := c + 1
+
+    EnviarMensaje(id,robot5)
+    EnviarMensaje(666,robot5)
+
+    RecibirMensaje(cod,robot5)
+    si(cod = 100)
+      DepositarTodo
+
+  fin
+
+  robot jefe
+  variables
+    id : numero
+    cod : numero
+    max : numero
+    idMax : numero
+    contador : numero
+    cFlores1 : numero
+    cPapeles1 : numero
+    cFlores2 : numero
+    cPapeles2 : numero
+    cFlores3 : numero
+    cPapeles3 : numero
+    cFlores4 : numero
+    cPapeles4 : numero
+  comenzar
+    id := 1
+    cFlores1 := 0
+    cPapeles1 := 0
+    cFlores2 := 0
+    cPapeles2 := 0
+    cFlores3 := 0
+    cPapeles3 := 0
+    cFlores4 := 0
+    cPapeles4 := 0
+    contador := 0
+    max := 0
+    idMax := 1
+    EnviarMensaje(1,robot1)
+    EnviarMensaje(2,robot2)
+    EnviarMensaje(3,robot3)
+    EnviarMensaje(4,robot4)
+
+    mientras (contador < 4)
+      RecibirMensaje(id,*)
+      si(id = 1)
+        RecibirMensaje(cod,robot1)
+        si(cod = 1)
+          cFlores1 := cFlores1 + 1
+        sino
+          si(cod = 2)
+            cPapeles1 := cPapeles1 + 1
+          sino
+            si(cod = 666)
+              contador := contador + 1
+      sino
+        si(id = 2)
+          RecibirMensaje(cod,robot2)
+          si(cod = 1)
+            cFlores2 := cFlores2 + 1
+          sino
+            si(cod = 2)
+              cPapeles2 := cPapeles2 + 1
+            sino
+              si(cod = 666)
+                contador := contador + 1 
+        sino
+          si(id = 3)
+            RecibirMensaje(cod,robot3)
+            si(cod = 1)
+              cFlores3 := cFlores3 + 1
+            sino
+              si(cod = 2)
+                cPapeles3 := cPapeles3 + 1
+              sino
+                si(cod = 666)
+                  contador := contador + 1
+          sino
+            si(id = 4)
+              RecibirMensaje(cod,robot4)
+              si(cod = 1)
+                cFlores4 := cFlores4 + 1
+              sino
+                si(cod = 2)
+                  cPapeles4 := cPapeles4 + 1
+                sino
+                  si(cod = 666)
+                    contador := contador + 1
+
+    si((cFlores1 + cPapeles1) > (cFlores2 + cPapeles2))
+      si((cFlores1 + cPapeles1) > (cFlores3 + cPapeles3))
+        si((cFlores1 + cPapeles1) > (cFlores4 + cPapeles4))
+          max := cFlores1 + cPapeles1
+          idMax := 1
+    sino
+      si((cFlores2 + cPapeles2) > (cFlores3 + cPapeles3))
+        si((cFlores2 + cPapeles2) > (cFlores4 + cPapeles4))
+          max := cFlores2 + cPapeles2
+          idMax := 2
+      sino
+        si((cFlores3 + cPapeles3) > (cFlores4 + cPapeles4))
+          max := cFlores3 + cPapeles3
+          idMax := 3
+        sino
+          max := cFlores4 + cPapeles4
+          idMax := 4
+
+    Informar(idMax)
+    Informar(max)
+
+    si(idMax = 1)
+      EnviarMensaje(100,robot1)
+      EnviarMensaje(0,robot2)
+      EnviarMensaje(0,robot3)
+      EnviarMensaje(0,robot4)
+    sino
+      si(idMax = 2)
+        EnviarMensaje(100,robot2)
+        EnviarMensaje(0,robot1)
+        EnviarMensaje(0,robot3)
+        EnviarMensaje(0,robot4)
+      sino
+        si(idMax = 3)
+          EnviarMensaje(100,robot3)
+          EnviarMensaje(0,robot1)
+          EnviarMensaje(0,robot2)
+          EnviarMensaje(0,robot4)
+        sino
+          si(idMax = 4)
+            EnviarMensaje(100,robot4)
+            EnviarMensaje(0,robot1)
+            EnviarMensaje(0,robot2)
+            EnviarMensaje(0,robot3)
+
+
+  fin
+
+variables 
+  robot1: recolector
+  robot2: recolector
+  robot3: recolector
+  robot4: recolector
+  robot5: jefe
+  
+comenzar 
+  AsignarArea(robot1,areaComun)
+  AsignarArea(robot2,areaComun)
+  AsignarArea(robot3,areaComun)
+  AsignarArea(robot4,areaComun)
+  AsignarArea(robot1,areaEspera)
+  AsignarArea(robot2,areaEspera)
+  AsignarArea(robot3,areaEspera)
+  AsignarArea(robot4,areaEspera)
+  AsignarArea(robot5,areaJefe)
+  
+  Iniciar(robot1, 10, 10)
+  Iniciar(robot2, 11, 10) 
+  Iniciar(robot3, 12, 10)
+  Iniciar(robot4, 13, 10) 
+  Iniciar(robot5, 1, 1) 
+fin
