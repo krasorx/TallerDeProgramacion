@@ -1,0 +1,90 @@
+programa Ejercicio-2
+procesos
+  proceso JuntarFlores(ES flores : numero)
+  comenzar
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor
+      flores := flores + 1
+  fin 
+areas
+  areaComun : AreaC(3,30,15,45)
+  areaDepo : AreaC(35,50,35,50)
+  areaCor1 : AreaP(3,1,3,30)
+  areaCor2 : AreaP(5,1,5,30)
+  areaCor3 : AreaP(7,1,7,30)
+  areaCor4 : AreaP(9,1,9,30)
+  areaJefe : AreaP(1,1,1,1)
+robots 
+  robot corredor
+  variables
+    flores : numero
+    pasos : numero
+    ca : numero
+    av : numero
+  comenzar
+    flores := 0
+    pasos := 0
+    mientras(PosCa < 30)
+      Random(pasos,1,5)
+      repetir pasos
+        JuntarFlores(flores)
+        mover
+    av := PosAv
+    ca := PosCa
+    BloquearEsquina(35,50)
+    Pos(35,50)
+    repetir flores
+      depositarFlor
+    EnviarMensaje(1,robot5)
+    Pos(av,ca)
+    LiberarEsquina(35,50)
+    Pos (av,ca)
+  fin
+
+  robot boss  {Io Diavolo sono imperatore}
+  variables
+    id : numero
+  comenzar
+    id := 0
+
+    RecibirMensaje(id,*)
+
+    Informar(id)
+
+    repetir 3
+      RecibirMensaje(id,*)
+
+  fin
+     
+variables 
+  robot1: corredor
+  robot2: corredor
+  robot3: corredor
+  robot4: corredor
+  robot5: boss
+comenzar 
+
+  AsignarArea(robot1,areaCor1)
+  AsignarArea(robot1,areaComun)
+  AsignarArea(robot1,areaDepo)
+
+  AsignarArea(robot2,areaCor2)
+  AsignarArea(robot2,areaComun)
+  AsignarArea(robot2,areaDepo)
+
+  AsignarArea(robot3,areaCor3)
+  AsignarArea(robot3,areaComun)
+  AsignarArea(robot3,areaDepo)
+
+  AsignarArea(robot4,areaCor4)
+  AsignarArea(robot4,areaComun)
+  AsignarArea(robot4,areaDepo)
+
+  AsignarArea(robot5,areaJefe)
+
+  Iniciar(robot1, 3, 1)
+  Iniciar(robot2, 5, 1 ) 
+  Iniciar(robot3, 7, 1)
+  Iniciar(robot4, 9, 1 ) 
+  Iniciar(robot5, 1, 1)
+fin
