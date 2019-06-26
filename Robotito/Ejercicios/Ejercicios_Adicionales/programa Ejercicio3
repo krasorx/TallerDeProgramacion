@@ -1,0 +1,182 @@
+programa Ejercicio3
+procesos
+  proceso Recoleccion( ES objetos : numero ; E id : numero)
+  variables
+    c : numero
+  comenzar
+    c := 0
+    si (HayFlorEnLaEsquina)
+      tomarFlor
+      objetos := objetos + 1
+    si (HayPapelEnLaEsquina)
+      tomarPapel
+      objetos := objetos + 1
+    si (~(HayPapelEnLaEsquina) & ~(HayFlorEnLaEsquina))
+      EnviarMensaje(id,robot4)
+      EnviarMensaje(2,robot4)
+    sino
+      EnviarMensaje(id,robot4)
+      EnviarMensaje(1,robot4)
+  fin 
+  proceso Recorrido
+  variables
+    i : numero
+    tieneAlgo : boolean
+    ctrl : boolean
+  comenzar
+    i := 0
+    ctrl := V
+    tieneAlgo := (HayPapelEnLaBolsa | HayFlorEnLaBolsa)
+
+    mientras( ( PosAv < 100 ) & (tieneAlgo) )
+      si(ctrl) { si es par deja flor, si es impar deja papel} 
+        si(HayPapelEnLaBolsa)
+          depositarPapel
+        si(HayFlorEnLaBolsa)
+          depositarFlor
+      mover
+      tieneAlgo := (HayPapelEnLaBolsa | HayFlorEnLaBolsa)
+
+  fin
+areas
+
+  areaReco : AreaC(5,5,5,5)
+  areaRec1 : AreaP(2,2,2,2)
+  areaRec2 : AreaP(3,3,3,3)
+  areaRec3 : AreaP(4,4,4,4)
+  areaCord : AreaP(1,1,1,1)
+  areaDepo : AreaC(10,10,10,100)
+
+robots 
+  robot recolector
+  variables
+    c : numero
+    objetos : numero
+    ca : numero
+    av : numero
+    id : numero
+  comenzar
+    c := 0
+    objetos := 0
+    ca := PosCa
+    av := PosAv
+
+    RecibirMensaje(id,robot4)
+
+    mientras(c <> 4)
+      BloquearEsquina(5,5)
+      Pos (5,5)
+      Recoleccion(objetos,id)
+      Pos(av,ca)
+      LiberarEsquina(5,5)
+      RecibirMensaje(c,robot4)
+
+    EnviarMensaje(id,robot4)
+    EnviarMensaje(objetos,robot4)
+
+    RecibirMensaje(c,robot4)
+
+    si(c = 479)
+      Pos(10,10)
+      Recorrido
+
+  fin
+
+  robot coordinador
+  variables
+    c : numero
+    id : numero
+    idMax : numero
+    max : numero
+    obj : numero
+  comenzar
+
+    EnviarMensaje(1,robot1)
+    EnviarMensaje(2,robot2)
+    EnviarMensaje(3,robot3)
+
+    RecibirMensaje(id,*)
+    RecibirMensaje(c,*)
+
+    mientras(c <> 2)
+      
+      EnviarMensaje(c,robot1)
+      EnviarMensaje(c,robot2)
+      EnviarMensaje(c,robot3)
+      RecibirMensaje(id,*)
+      RecibirMensaje(c,*)
+
+    EnviarMensaje(4,robot1)
+    EnviarMensaje(4,robot2)
+    EnviarMensaje(4,robot3)
+
+
+    repetir 3
+      RecibirMensaje(id,*)
+      si(id = 1)
+        RecibirMensaje(obj,robot1)
+      sino
+        si(id = 2)
+          RecibirMensaje(obj,robot2)
+        sino
+          si(id = 3)
+            RecibirMensaje(obj,robot3)
+
+      si(max < obj)
+        max := obj
+        idMax := id
+
+    Informar(idMax)
+
+    si(id = 1)
+      EnviarMensaje(479,robot1)
+      EnviarMensaje(0,robot2)
+      EnviarMensaje(0,robot3)
+
+    sino
+      si(id = 2)
+        EnviarMensaje(0,robot1)
+        EnviarMensaje(479,robot2)
+        EnviarMensaje(0,robot3)
+      sino
+        si(id = 3)
+          EnviarMensaje(0,robot1)
+          EnviarMensaje(479,robot3)
+          EnviarMensaje(0,robot2)
+
+    max := 0
+    idMax := 1
+
+    
+
+
+  fin
+
+variables 
+  robot1: recolector
+  robot2: recolector
+  robot3: recolector
+  robot4: coordinador
+  
+comenzar 
+
+  AsignarArea(robot1,areaRec1)
+  AsignarArea(robot1,areaReco)
+  AsignarArea(robot1,areaDepo)
+
+  AsignarArea(robot2,areaRec2)
+  AsignarArea(robot2,areaReco)
+  AsignarArea(robot2,areaDepo)
+
+  AsignarArea(robot3,areaRec3)
+  AsignarArea(robot3,areaReco)
+  AsignarArea(robot3,areaDepo)
+
+  AsignarArea(robot4,areaCord)
+  
+  Iniciar(robot1, 2, 2)
+  Iniciar(robot2, 3, 3) 
+  Iniciar(robot3, 4, 4)
+  Iniciar(robot4, 1, 1) 
+
+fin
