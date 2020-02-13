@@ -1,0 +1,252 @@
+Jotaro Kujo
+Star Platinum
+A
+A
+C
+A
+A
+A
+1
+Jean Pierre Polnareff
+Silver Chariot
+C
+A
+C
+B
+B
+C
+1
+Noriaki Kakyoin
+Hierophant Green
+C
+B
+A
+B
+C
+D
+1
+Muhammad Avdol
+Magician's Red
+B
+B
+C
+B
+C
+D
+1
+Joseph Joestar
+Hermit Purple
+D
+C
+D
+A
+D
+E
+1
+DIO
+The World
+A
+A
+C
+A
+B
+B
+1
+Hol Horse
+Emperor
+B
+B
+B
+C
+E
+E
+3
+Forever
+Strength
+B
+D
+D
+A
+E
+E
+4
+Devo
+Ebony Devil
+D
+D
+A
+B
+D
+B
+2
+Steely Dan
+Lovers
+E
+D
+A
+A
+D
+E
+2
+Josuke Higashikata
+Crazy Diamond
+A
+A
+D
+B
+B
+C
+1
+Keicho Nijimura
+Bad Company
+B
+B
+C
+B
+C
+C
+6
+Shigekiyo Yangu
+Harvest
+E
+B
+A
+A
+E
+C
+6
+Ghiaccio
+White Album
+A
+C
+C
+A
+E
+E
+5
+Secco
+Oasis
+A
+A
+B
+A
+E
+C
+5
+Giorno Giovanna
+Golden Experience
+C
+A
+E
+D
+C
+A
+1
+Coco Jumbo
+Mr. President
+E
+E
+E
+A
+E
+E
+4
+Diavolo
+King Crimson
+A
+A
+E
+E
+?
+?
+1
+Doppio
+King Crimson
+A
+A
+E
+E
+?
+?
+1
+Jean Pierre Polnareff
+Chariot Requiem
+E
+E
+A
+A
+E
+A
+7
+Giorno Giovanna
+Golden Experience Requiem
+N
+N
+N
+N
+N
+N
+7
+Koichi Hirose
+Echoes Act 1
+E
+E
+B
+B
+C
+A
+3
+Koichi Hirose
+Echoes Act 2
+C
+D
+B
+B
+C
+A
+3
+Koichi Hirose
+Echoes Act 3
+B
+B
+C
+B
+C
+A
+1
+Yoshikage Kira
+Killer Queen
+A
+B
+D
+B
+B
+A
+1
+Yoshikage Kira
+Sheer Heart Attack
+A
+C
+A
+A
+E
+A
+2
+Yoshikage Kira
+Bites The Dust
+B
+B
+A
+A
+D
+A
+2
+Risotto Nero
+Metallica
+C
+C
+C
+A
+C
+C
+6
