@@ -1,0 +1,120 @@
+programa ExamenEsquinasVacias
+procesos
+  proceso JuntarFlores (ES flor:numero)
+  comenzar
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor
+      flor:= flor + 1
+  fin 
+  proceso Rectangulo(E alto:numero ; E largo:numero; ES flores:numero)
+  comenzar
+    repetir 2
+      repetir alto
+        JuntarFlores(flores)
+        mover
+      derecha
+      repetir largo
+        JuntarFlores(flores)
+        mover
+      derecha
+  fin
+areas
+  areaR1 : AreaP(10,1,10,1)
+  areaR2 : AreaP(12,1,12,1)
+  areaR3 : AreaP(14,1,14,1)
+  ciudad : AreaC(5,5,20,20)
+  areaFiscal : AreaP(21,21,21,21)
+robots 
+  robot tipo1
+  variables
+    esqVacias : numero
+    intentos : numero
+    floresDepo : numero
+    caIni : numero
+    avIni : numero
+    caT : numero
+    avT : numero
+    id : numero
+  comenzar
+    esqVacias := 0
+    intentos := 0
+    caIni := PosCa
+    avIni := PosAv
+    floresDepo := 0
+    RecibirMensaje(id,robot4)
+    mientas(intentos < 4)
+      RecibirMensaje(avT,robot4)
+      RecibirMensaje(caT,robot4)
+      BloquearEsquina(avT,caT)
+      Pos(avT,caT)
+      si(~HayPapelEnLaEsquina)
+        si(~HayFlorEnLaEsquina)
+          esqVacias := esqVacias + 1
+          si(HayFlorEnLaBolsa)
+            depositarFlor
+            floresDepo := floresDepo + 1
+      intentos := intentos + 1 
+      Pos(avIni,caIni)
+      LiberarEsquina(avT,caT)
+    EnviarMensaje(id,robot4)
+    EnviarMensaje(floresDepo,robot4)
+    EnviarMensaje(esqVacias,robot4)
+  fin
+  robot fiscal
+  variables
+    f : numero
+    fTot : numero
+    esqVacias : numero 
+    esqVaciasMin : numero 
+    calle : numero
+    avenida : numero
+    id : numero
+    idEsqVaMin : numero
+  comenzar
+    esqVaciasMin := 999
+    EnviarMensaje(1,robot1)
+    EnviarMensaje(2,robot2)
+    EnviarMensaje(3,robot3)
+    repetir 4
+      Random(calle,5,20)
+      Random(avenida,5,20)
+      EnviarMensaje(avenida,robot1)
+      EnviarMensaje(calle,robot1)
+
+      Random(calle,5,20)
+      Random(avenida,5,20)
+      EnviarMensaje(avenida,robot2)
+      EnviarMensaje(calle,robot2)
+
+      Random(calle,5,20)
+      Random(avenida,5,20)
+      EnviarMensaje(avenida,robot3)
+      EnviarMensaje(calle,robot3)
+    
+    repetir 3
+      recibirMensaje(id,*)  
+      recibirMensaje(f,*) 
+      fTot := faux + f
+      recibirMensaje(esqVacias,*) 
+      si(esqVacias < esqVaciasMin)
+        idEsqVaMin := id
+    
+    Informar(fTot)
+    Informar(esqVacias)
+  fin
+     
+variables 
+  robot1: tipo1
+  robot2: tipo1 
+  robot3: tipo1
+  robot4: fiscal
+comenzar 
+  AsignarArea(robot1,ciudad)
+  AsignarArea(robot2,ciudad)
+  AsignarArea(robot3,ciudad)
+  AsignarArea(robot4,ciudad)
+  Iniciar(robot1, 10, 1  )
+  Iniciar(robot2, 12, 1 ) 
+  Iniciar(robot3, 14, 4)
+  Iniciar(robot4, 21, 21 ) 
+fin
